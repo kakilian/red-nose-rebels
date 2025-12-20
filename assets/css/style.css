@@ -510,7 +510,7 @@ button:hover {
   position: relative;
   height: 60px;
   border: 3px solid #667eea;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(102, 126, 234, 0.2);
@@ -757,10 +757,6 @@ button:hover {
 }
 
 /* snow effect (game screen only) */
-#screeGame .board-box{
-  position: relative;
-}
-
 #screenGame .snow {
   position: absolute;
   inset: 0;
@@ -798,4 +794,6 @@ button:hover {
 /* forest backgronund fix */
 #screenGame .board-box {
   background-image: url("../images/forest/forest-bg.jpg");
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);/* improve text readability on forest background */
+  position: relative;
 }
