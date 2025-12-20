@@ -796,4 +796,11 @@ button:hover {
   background-image: url("../images/forest/forest-bg.jpg");
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);/* improve text readability on forest background */
   position: relative;
+  background-repeat: repeat-x;
+  animation:forest-run 40s linear infinite;
+}
+
+@keyframes forest-run {
+  from {background-position: 0% 50%;}
+  to {background-position: 100% 50%;}
 }
