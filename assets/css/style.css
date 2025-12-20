@@ -793,14 +793,16 @@ button:hover {
 
 /* forest backgronund fix */
 #screenGame .board-box {
-  background-image: url("../images/forest/forest-bg.jpg");
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);/* improve text readability on forest background */
+  background-image: url("../images/forest/forest-eyelevel.jpg");
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);/* improve text readability on forest background */
   position: relative;
   background-repeat: repeat-x;
-  animation:forest-run 40s linear infinite;
+  background-size: auto 100%;
+  background-position: left bottom;
+  animation:forest-run 12s linear infinite;
 }
 
 @keyframes forest-run {
-  from {background-position: 0% 50%;}
-  to {background-position: 100% 50%;}
+  from {background-position: 0px 50%;}
+  to {background-position: -120% 100%;}
 }
