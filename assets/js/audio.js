@@ -117,7 +117,7 @@ export function playLoseSound() {
 
 /* Play bell sound */
 export function playBellSound() {
-  if (!soundEnabled || !audioUnlocked) return;
+  if (!soundEnabled) return;
 
   try {
     bellSound.currentTime = 0;
