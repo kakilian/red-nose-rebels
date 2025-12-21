@@ -16,8 +16,9 @@ body {
 
 /* Simple buttons */
 button {
-  border-radius: 8px;
+  border-radius: 10px;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 button:hover {
@@ -87,6 +88,7 @@ button:hover {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   padding: 0.75rem 1.5rem !important;
+  overflow: hidden;
 }
 
 .topbar-box .fw-semibold {
@@ -114,15 +116,24 @@ button:hover {
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 }
 
+#audioToggleBtn.btn-secondary {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+#audioToggleBtn.btn-secondary:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
 #settingsBtn {
   font-size: 1.5rem;
   color: #667eea;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 #settingsBtn:hover {
   color: #764ba2;
-  transform: rotate(90deg) scale(1.1);
 }
 
 /* Hero placeholder */
@@ -134,6 +145,7 @@ button:hover {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
   backdrop-filter: blur(10px);
   padding: 2.5rem !important;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -158,6 +170,7 @@ button:hover {
   border: 4px solid #667eea;
   box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .rudolph-img:hover {
@@ -195,6 +208,7 @@ button:hover {
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
   backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 /* Game intro */
@@ -237,10 +251,11 @@ button:hover {
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(102, 126, 234, 0.2);
+  overflow: hidden;
 }
 
 .spotify-embed {
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   border: none;
   transition: all 0.3s ease;
@@ -297,6 +312,8 @@ button:hover {
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
   backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Player info in game screen */
@@ -305,6 +322,7 @@ button:hover {
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   display: inline-block;
+  overflow: hidden;
 }
 
 .player-label {
@@ -320,32 +338,6 @@ button:hover {
   color: #374151;
   font-size: 1.1rem;
   font-weight: 700;
-}
-
-/* Section titles */
-.section-title {
-  color: #667eea;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 2px solid #667eea;
-  padding-bottom: 0.5rem;
-  display: inline-block;
-}
-
-/* Forest path image */
-.forest-path-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
-  border: 3px solid #667eea;
-  transition: all 0.3s ease;
-}
-
-.forest-path-img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* Track labels */
@@ -371,8 +363,9 @@ button:hover {
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  border-radius: 10px;
+  border-radius: 12px;
   display: inline-block;
+  overflow: hidden;
 }
 
 /* Dice info styling */
@@ -389,17 +382,6 @@ button:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.2);
-}
-
-.win-title {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.lose-title {
-  color: #6b7280;
 }
 
 .result-message {
@@ -437,81 +419,13 @@ button:hover {
   }
 }
 
-/* Win and lose line */
-.win-line {
-  border-top: 3px solid #667eea;
-  border-bottom: 3px solid #667eea;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #374151;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-}
-
-/* Winner images container */
-.winner-images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.winner-img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  filter: drop-shadow(0 6px 12px rgba(102, 126, 234, 0.4));
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 8px;
-  border: 4px solid #667eea;
-  animation: winnerPulse 2s ease-in-out infinite;
-}
-
-.plus-sign {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #667eea;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.red-nose {
-  font-size: 4rem;
-  filter: drop-shadow(0 4px 8px rgba(255, 0, 0, 0.3));
-  animation: noseBlink 1.5s ease-in-out infinite;
-}
-
-@keyframes winnerPulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-@keyframes noseBlink {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
-}
-
 /* Track container */
 .track {
   position: relative;
   height: 60px;
   border: 3px solid #667eea;
-  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: visible;
   border-radius: 12px;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(102, 126, 234, 0.2);
 }
@@ -527,7 +441,8 @@ button:hover {
   color: #667eea;
   background: #fff;
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 /* Token base */
@@ -552,6 +467,7 @@ button:hover {
   background: rgba(255, 255, 255, 0.9);
   padding: 2px;
   border: 2px solid #667eea;
+  overflow: hidden;
 }
 
 /* Disable animations */
@@ -586,14 +502,6 @@ button:hover {
 }
 
 .no-anim .dice-img {
-  animation: none !important;
-}
-
-.no-anim .winner-img {
-  animation: none !important;
-}
-
-.no-anim .red-nose {
   animation: none !important;
 }
 
@@ -635,8 +543,9 @@ button:hover {
 /* Modal style */
 .modal-content {
   border: 2px solid #667eea;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .modal-header {
@@ -679,6 +588,7 @@ button:hover {
   min-width: 140px;
   background: rgba(255, 255, 255, 0.98);
   border: 3px solid #667eea;
+  border-radius: 16px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -695,6 +605,7 @@ button:hover {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
+  pointer-events: none;
 }
 
 .reindeer-btn:hover::before {
@@ -761,48 +672,251 @@ button:hover {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 #screenGame .snow::before,
 #screenGame .snow::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent 70%),
+  background-image: radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent 70%),
     radial-gradient(1.5px 1.5px at 60% 10%, rgba(255, 255, 255, 0.6), transparent 70%),
     radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.7), transparent 70%),
     radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.5), transparent 70%);
   background-size: 70px 70px;
   animation: snowFall 10s linear infinite;
+  border-radius: 20px;
 }
 
 #screenGame .snow::after {
   animation-duration: 42s;
   opacity: 0.5;
 }
+
+/* Ensure content is above snow */
+#screenGame .board-box > *:not(.snow) {
+  position: relative;
+  z-index: 2;
+}
 @keyframes snowFall {
   from {
-    transform:translateY(-8%);
+    transform: translateY(-8%);
   }
   to {
-    transform:translateY(8%);
+    transform: translateY(8%);
   }
 }
 
-/* forest backgronund fix */
+/* Forest Background */
 #screenGame .board-box {
-  background-image: url("../images/forest/forest-eyelevel.jpg");
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);/* improve text readability on forest background */
+  background-image: url('../images/forest/forest-eyelevel.jpg');
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
   position: relative;
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: left bottom;
-  animation:forest-run 12s linear infinite;
+  animation: forest-run 12s linear infinite;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes forest-run {
-  from {background-position: 0px 50%;}
-  to {background-position: -120% 100%;}
+  from {
+    background-position: 0px 50%;
+  }
+  to {
+    background-position: -120% 100%;
+  }
+}
+/* Winner Composition Layout */
+.winner-composition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.winner-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Animation for winner reindeer image */
+#winnerReindeerImg {
+  animation: winnerReindeerBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes winnerReindeerBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  }
+  25% {
+    transform: translateY(-12px) scale(1.05) rotate(-5deg);
+    box-shadow: 0 16px 32px rgba(102, 126, 234, 0.6);
+  }
+  75% {
+    transform: translateY(-12px) scale(1.05) rotate(5deg);
+    box-shadow: 0 16px 32px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Animation for Rudolph */
+#screenLose .winner-img {
+  animation: rudolphVictoryBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes rudolphVictoryBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+  }
+  30% {
+    transform: translateY(-15px) scale(1.08) rotate(-8deg);
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.6);
+  }
+  70% {
+    transform: translateY(-15px) scale(1.08) rotate(8deg);
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.6);
+  }
+}
+
+.arrow-icon {
+  font-size: 3rem;
+  color: #667eea;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: arrowSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}
+
+.red-nose-badge {
+  font-size: 5rem;
+  animation: redNoseBlink 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@keyframes redNoseBlink {
+  0%,
+  49% {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.9));
+    transform: scale(1);
+  }
+  50%,
+  100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4));
+    transform: scale(0.95);
+  }
+}
+
+/* Game Statistics */
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+/* Victory distinction */
+.win-line.player-win {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+  animation: winPulse 2s ease-in-out infinite;
+}
+
+.win-line.rudolph-win {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes winPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.6);
+  }
+}
+
+.win-title {
+  color: #10b981;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.lose-title {
+  color: #ef4444;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(239, 68, 68, 0.3);
 }
