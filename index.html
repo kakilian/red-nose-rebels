@@ -20,20 +20,39 @@
     <!-- Top bar -->
     <header class="container py-3">
       <div class="topbar-box d-flex align-items-center justify-content-between px-3 py-2">
-        <button id="audioToggleBtn" type="button" class="btn btn-sm btn-secondary">🔇 AUDIO OFF</button>
+        <!-- Desktop Layout (hidden on mobile) -->
+        <div class="desktop-controls d-none d-md-grid w-100">
+          <!-- Left: Audio toggle -->
+          <div class="desktop-left">
+            <button id="audioToggleBtn" type="button" class="btn btn-sm btn-secondary control-toggle">🔇 AUDIO OFF</button>
+          </div>
 
-        <div class="w-100 text-center fw-semibold">Run, Rudolph, Run !</div>
+          <!-- Center: Title -->
+          <div class="desktop-center fw-semibold text-gradient">Run, Rudolph, Run !</div>
 
-        <button
-          id="settingsBtn"
-          type="button"
-          class="btn btn-link p-0 text-dark text-decoration-none ms-2"
-          data-bs-toggle="modal"
-          data-bs-target="#settingsModal"
-          aria-label="Open settings"
-        >
-          ☰
-        </button>
+          <!-- Right: Effects toggle -->
+          <div class="desktop-right">
+            <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">✨ EFFECTS ON</button>
+          </div>
+        </div>
+
+        <!-- Mobile Layout (hidden on desktop) -->
+        <div class="mobile-controls d-flex d-md-none align-items-center justify-content-between w-100">
+          <!-- Center: Title -->
+          <div class="w-100 text-center fw-semibold">Run, Rudolph, Run !</div>
+
+          <!-- Right: Hamburger button -->
+          <button
+            id="settingsBtn"
+            type="button"
+            class="btn btn-link p-0 text-dark text-decoration-none flex-shrink-0"
+            data-bs-toggle="modal"
+            data-bs-target="#settingsModal"
+            aria-label="Open settings"
+          >
+            ☰
+          </button>
+        </div>
       </div>
     </header>
 
@@ -173,7 +192,11 @@
           </div>
 
           <div class="dice-area mt-4 text-center">
-            <img id="diceImg" class="dice-img" src="assets/images/dices/dice-1.png" alt="Dice" />
+            <div class="die-container">
+              <div class="die" id="gameDie">
+                <div class="die-face" id="gameDieFace"></div>
+              </div>
+            </div>
             <div class="small mt-2 dice-info">
               Roll:
               <strong id="diceValueText">-</strong>
