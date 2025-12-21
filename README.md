@@ -1,12 +1,16 @@
+# Placeholder: Link to Live Game
+
 # Red-Nose Rebels
 
 ## Welcome to Red-Nose Rebels, your rebellious Christmas challenge!
+
+Placeholder: Mock-up from Am-I-Responsive
 
 Red-Nose Rebels is a classic board game in which Father Christmas’s reindeer have grown tired of Rudolph’s prominent role during the annual festive season. Players choose one of Father Christmas’s reindeer — Dasher, Dancer, Prancer, Vixen, Comet, Cupid, Donner, or Blitzen — to challenge Rudolph in a race to the finish line.
 
 The winning reindeer not only earns the coveted pole position in the annual race to deliver presents on time, but also gets to wear Rudolph’s famous red nose (hence the name *Red-Nose Rebels*). While the game follows a straightforward and accessible set of rules, it encourages strategic thinking and creativity within a festive setting.
 
-So, join me on the track and compete to claim the most famous red nose in history. After all, rolling the dice has never been more fun!
+So, join us on the track and compete to claim the most famous red nose in history. After all, rolling the dice has never been more fun!
 
 ---
 
@@ -14,7 +18,7 @@ So, join me on the track and compete to claim the most famous red nose in histor
 
 ### Purpose
 
-*Red-Nose Rebels* is a festive, browser-based board game designed to provide an engaging and accessible gaming experience inspired by traditional dice-based race games. The project combines playful storytelling with interactive gameplay, focusing on usability, visual appeal, and responsiveness across devices. It also serves as a technical demonstration of my front-end development skills within a creative, seasonal context.
+*Red-Nose Rebels* is a festive, browser-based board game designed to provide an engaging and accessible gaming experience inspired by traditional dice-based race games. The project combines playful storytelling with interactive gameplay, focusing on usability, visual appeal, and responsiveness across devices. It also serves as a technical demonstration of our front-end development skills within a creative, seasonal context.
 
 ### Primary Goals
 
@@ -38,15 +42,15 @@ The game is intended for casual players of all ages who enjoy simple, luck-based
 
 ## User Stories
 
-- As a user, I want the game to have a consistent visual identity so it feels polished and cohesive.  
-- As a user, I want to control sound and animations (on/off) so I can play comfortably depending on my device and preference.  
-- As a user, I want to open a close-up view of the dice result so I can clearly see what I rolled.  
-- As a user, I want to click a Roll button and see a dice animation so the game feels interactive, and then see the rolled result displayed clearly.  
-- As a user, I want the game to look dark and festive but remain easy to read so I can enjoy playing it.  
-- As a user, I want to clearly see when the game is finished so I know who won.  
-- As a user, I want random events to affect movement so each game feels different.  
-- As a user, I want to play against Rudolph so there is a clear rival in the game.  
-- As a user, I want my reindeer to move step by step across the board so I can track my progress.
+- As a user, we want the game to have a consistent visual identity so it feels polished and cohesive.  
+- As a user, we want to control sound and animations (on/off) so we can play comfortably depending on our device and preference.  
+- As a user, we want to open a close-up view of the dice result so we can clearly see what we rolled.  
+- As a user, we want to click a Roll button and see a dice animation so the game feels interactive, and then see the rolled result displayed clearly.  
+- As a user, we want the game to look dark and festive but remain easy to read so we can enjoy playing it.  
+- As a user, we want to clearly see when the game is finished so we know who won.  
+- As a user, we want random events to affect movement so each game feels different.  
+- As a user, we want to play against Rudolph so there is a clear rival in the game.  
+- As a user, we want our reindeer to move step by step across the board so we can track our progress.
 
 ---
 
@@ -60,7 +64,7 @@ Finally, *Red-Nose Rebels* aims to appeal to players who question received wisdo
 
 ### Audio Management
 
-I used sound to make playing more fun. I organized all the audio files and ensured they work smoothly across the project.
+We used sound to make playing more fun. We organized all the audio files and ensured they work smoothly across the project.
 
 - **How sounds are loaded:** When the game starts, all sounds (dice rolling, winning, losing, and the bell when you pick a reindeer) are loaded from the `assets/audio` folder. Each sound is set up once and stored in memory so it can be played quickly when needed.  
 - **How sounds are played and reused:** Instead of creating new sound objects every time, the same objects are reused. When you roll the dice, the dice sound plays. When you hover over a reindeer, a bell sound plays. After each sound finishes, it stops and resets so it can play again the next time.  
@@ -71,7 +75,7 @@ I used sound to make playing more fun. I organized all the audio files and ensur
 
 ### Bootstrap Utilisation and Animations
 
-I used Bootstrap and CSS animations to create a clean, modern look and make the site feel responsive on all devices.
+We used Bootstrap and CSS animations to create a clean, modern look and make the site feel responsive on all devices.
 
 - **Bootstrap for layout and responsiveness:** Buttons use Bootstrap classes for consistent styling. The grid system ensures the layout looks good on phones, tablets, and computers. Containers and spacing (padding, margin, gap) keep things organized. Elements like modals and responsive menus are built-in.  
 - **Simple animations:**  
@@ -84,7 +88,7 @@ All animations use CSS transitions and keyframes and run smoothly without slowin
 
 ### Reindeer Cards and Game Screen
 
-- **Reindeer cards:** Each card is a button with an image, name, and styling. I added custom colors and effects. Each button holds a `data-reindeer` attribute so the game knows which reindeer was chosen. Hovering enlarges and rotates the image, and the card changes from white to a purple gradient. Clicking keeps it highlighted.  
+- **Reindeer cards:** Each card is a button with an image, name, and styling. We added custom colors and effects. Each button holds a `data-reindeer` attribute so the game knows which reindeer was chosen. Hovering enlarges and rotates the image, and the card changes from white to a purple gradient. Clicking keeps it highlighted.  
 - **Game screen organization:**  
   - **Top area:** Shows the chosen reindeer and the "Spin the Dice" button.  
   - **Racing tracks:** Two horizontal tracks (player and Rudolph) with tokens moving step by step.  
@@ -98,7 +102,9 @@ All animations use CSS transitions and keyframes and run smoothly without slowin
 
 ## Wireframes
 
-Before development began, I used wireframes to plan the entire project. They illustrate:
+Placeholder: Include images from `documentation/` folder here.
+
+Before development began, we used wireframes to plan the entire project. They illustrate:
 
 - Start screen (choose reindeer)  
 - Game screen (roll dice and race)  
