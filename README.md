@@ -152,3 +152,15 @@ Wireframes guided layout, spacing, button placement, and screen flow. The projec
 - **Seasonal Events:** Limited-time boards, dice, or challenges tied to holidays.  
 - **Custom Challenges:** Users can create and share their own tracks or game scenarios.  
 - **Social Sharing:** Share results, victories, or funny moments on social media.  
+
+
+## Tools and Technologies
+
+For this project, we used the following tools and technologies:
+
+- **HTML** – for structuring the game and creating interactive elements.  
+- **CSS** – for styling, layout, and animations.  
+- **JavaScript** – for implementing game logic, dice rolls, and token movement.  
+- **GitHub** – for version control and collaboration.  
+- **Balsamiq** – for wireframing and planning the user interface.  
+- **VS Code** – as our primary code editor for development.  
