@@ -164,3 +164,54 @@ For this project, we used the following tools and technologies:
 - **GitHub** – for version control and collaboration.  
 - **Balsamiq** – for wireframing and planning the user interface.  
 - **VS Code** – as our primary code editor for development.  
+
+
+## Bug Documentation
+
+### Placeholder for documented bugs.
+
+
+## Deployment
+
+### GitHub Pages
+
+The site was deployed to GitHub Pages. The steps to deploy are as follows:
+
+* In the **GitHub repository**, navigate to the "Settings" tab.
+* In Settings, click on the "Pages" link from the menu on the left.
+* From the "Build and deployment" section, click the drop-down called "Branch", and select the main branch, then click "Save".
+* The page will be automatically refreshed with a detailed message display to indicate the successful deployment.
+* Allow up to 5 minutes for the site to fully deploy.
+
+The live link can be found on **GitHub Pages**.
+
+### Local Development
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the **GitHub repository**.
+2. Locate and click on the green "Code" button at the very top, above the commits and files.
+3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy" button to copy the URL to your clipboard.
+4. Open "Git Bash" or "Terminal".
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your IDE Terminal, type the following command to clone the repository:
+   * `git clone https://github.com/[YOUR-USERNAME]/red-nose-rebels.git`
+7. Press "Enter" to create your local clone.
+
+To run locally:
+
+1. Open the `index.html` file in your browser, or
+2. Use a local development server such as Live Server in VS Code
+
+#### Forking
+
+By forking the GitHub Repository, you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the **GitHub Repository**.
+2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
