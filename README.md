@@ -102,8 +102,6 @@ All animations use CSS transitions and keyframes and run smoothly without slowin
 
 ## Wireframes
 
-Placeholder: Include images from `documentation/` folder here.
-
 Before development began, we used wireframes to plan the entire project. They illustrate:
 
 - Start screen (choose reindeer)  
@@ -117,3 +115,40 @@ Wireframes guided layout, spacing, button placement, and screen flow. The projec
 ![Wireframes](documentation/wireframes.png)
 
 
+## Game Features
+
+### Placeholder screenshots of game features: background, reindeer, dice and counters etc.
+
+
+## Future Features and Extensions
+
+### Gameplay Enhancements
+- **Multiple Player Mode:** Allow two or more human players to compete on the same track or via online multiplayer.  
+- **Customizable Reindeer:** Let players choose or unlock new reindeer characters with unique appearances or abilities.  
+- **Power-Ups and Hazards:** Add special tiles, bonuses, or obstacles on the track to make gameplay more strategic.  
+- **Alternative Dice Mechanics:** Introduce dice with special effects (e.g., double rolls, freeze turns) or custom dice faces.  
+- **Level-based Challenges:** Different tracks or boards with increasing difficulty or unique thematic elements.  
+
+### Visual and Audio Improvements
+- **Enhanced Animations:** More dynamic dice rolls, reindeer movements, and celebratory effects for wins or losses.  
+- **Thematic Environments:** Seasonal variations (snow, night mode, different festive landscapes).  
+- **Customizable Music & Sounds:** Let users pick background music or sound themes for a personalized experience.  
+- **Particle Effects:** Sparkles, snow, or confetti when events occur (rolling dice, winning, etc.).  
+
+### User Experience & Accessibility
+- **Tutorial Mode:** An interactive guide for new players explaining rules and controls.  
+- **Adaptive Difficulty:** Adjust the computer’s AI for beginners, intermediate, or expert players.  
+- **Accessibility Options:** High-contrast mode, screen reader support, and keyboard-only controls.  
+- **Saved Progress & Leaderboards:** Track player statistics, high scores, and achievements over multiple sessions.  
+
+### Technical Improvements
+- **Mobile App Version:** Port the game to iOS or Android for a native mobile experience.  
+- **Progressive Web App (PWA):** Allow offline play and installation as a standalone app.  
+- **Code Refactoring:** Modularize JavaScript for maintainability and add automated testing.  
+- **Database Integration:** Store player profiles, scores, and customization options in a backend.  
+
+### Community & Engagement Features
+- **Reindeer Unlockables:** Unlock new characters, skins, or accessories for milestones or achievements.  
+- **Seasonal Events:** Limited-time boards, dice, or challenges tied to holidays.  
+- **Custom Challenges:** Users can create and share their own tracks or game scenarios.  
+- **Social Sharing:** Share results, victories, or funny moments on social media.  
