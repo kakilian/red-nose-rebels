@@ -215,3 +215,19 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
+
+## Credits and Ackowledgements
+
+- ChatGPT: for architecture and debugging
+- Claude Ai: for inspiration and debugging
+- Pixabay: for photos and images
+- Youtube: for music and sound effects
+- Tim Burton's *The Night before Christmas* (1993): for inspipration and gateway into our preliminary discussions on discord
+
+## Contributors:
+
+- [Katarina Kilian](https://github.com/kakilian) 
+- [Monica Thomas](https://github.com/monicathomas8)
+- [Dario, Drake Designer](https://github.com/Drake-Designer)
+- [Dr Sascha Klement](https://github.com/Sascha-netizen)
+
