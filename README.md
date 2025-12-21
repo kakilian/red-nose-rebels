@@ -228,6 +228,6 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 - [Katarina Kilian](https://github.com/kakilian) 
 - [Monica Thomas](https://github.com/monicathomas8)
-- [Dario, Drake Designer](https://github.com/Drake-Designer)
+- [Dario](https://github.com/Drake-Designer)
 - [Dr Sascha Klement](https://github.com/Sascha-netizen)
 
