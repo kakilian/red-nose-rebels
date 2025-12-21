@@ -710,7 +710,7 @@ button:hover {
   }
 }
 
-/* Forest Background */
+/* Forest Background Animation */
 #screenGame .board-box {
   background-image: url('../images/forest/forest-eyelevel.jpg');
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);

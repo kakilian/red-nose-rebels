@@ -315,6 +315,7 @@ if (animationsToggle) animationsToggle.addEventListener('change', handleAnimatio
 
 for (let i = 0; i < reindeerButtons.length; i += 1) {
   reindeerButtons[i].addEventListener('click', () => handleReindeerPick(reindeerButtons[i]));
+  reindeerButtons[i].addEventListener('pointerdown', unlockAudio);
   reindeerButtons[i].addEventListener('mouseenter', () => playBellSound());
 }
 
