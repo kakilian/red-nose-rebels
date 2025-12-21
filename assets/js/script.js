@@ -29,7 +29,6 @@ let playerPos = 0;
 let rivalPos = 0;
 let selectedReindeer = '';
 let turnCount = 0;
-let gameStartTime = null;
 let maxDiceRoll = 0;
 
 /* UI elements */
@@ -38,6 +37,7 @@ const rollBtn = document.getElementById('rollBtn');
 const playAgainBtn = document.getElementById('playAgainBtn');
 const playAgainBtn2 = document.getElementById('playAgainBtn2');
 const audioToggleBtn = document.getElementById('audioToggleBtn');
+const effectsToggleBtn = document.getElementById('effectsToggleBtn');
 
 const soundToggle = document.getElementById('soundToggle');
 const animationsToggle = document.getElementById('animationsToggle');
@@ -125,7 +125,7 @@ function handleTiebreaker() {
   eventText.textContent = '⚡ TIE! Rolling tiebreaker...';
   rollBtn.disabled = true;
 
-  setTimeout(() => {
+  const executeTiebreaker = () => {
     const playerTiebreakerRoll = rollDice();
     const rivalTiebreakerRoll = rollDice();
 
@@ -148,9 +148,20 @@ function handleTiebreaker() {
     } else {
       // Another tie - recursive tiebreaker
       eventText.textContent = '⚡ Another TIE! Rolling again...';
-      setTimeout(handleTiebreaker, 1000);
+
+      if (areAnimationsEnabled()) {
+        setTimeout(handleTiebreaker, 1000);
+      } else {
+        handleTiebreaker();
+      }
     }
-  }, 1500);
+  };
+
+  if (areAnimationsEnabled()) {
+    setTimeout(executeTiebreaker, 1500);
+  } else {
+    executeTiebreaker();
+  }
 }
 
 /* Handle sound toggle */
@@ -167,6 +178,7 @@ function handleAnimationsToggle() {
   const enabled = animationsToggle.checked;
   saveAnimationsSetting(enabled);
   applyAnimationsSetting();
+  syncEffectsToggle(enabled);
 }
 
 /* Handle audio toggle button */
@@ -176,6 +188,29 @@ function toggleAudio() {
   syncToggles(enabled);
 
   if (!enabled) stopAllSounds();
+}
+
+/* Handle effects toggle button (desktop) */
+function toggleEffects() {
+  const enabled = !areAnimationsEnabled();
+  saveAnimationsSetting(enabled);
+  applyAnimationsSetting();
+  syncEffectsToggle(enabled);
+}
+
+/* Sync effects toggle button UI */
+function syncEffectsToggle(enabled) {
+  if (!effectsToggleBtn) return;
+
+  if (enabled) {
+    effectsToggleBtn.textContent = '✨ EFFECTS ON';
+    effectsToggleBtn.classList.remove('btn-secondary');
+    effectsToggleBtn.classList.add('btn-success');
+  } else {
+    effectsToggleBtn.textContent = '🚫 EFFECTS OFF';
+    effectsToggleBtn.classList.remove('btn-success');
+    effectsToggleBtn.classList.add('btn-secondary');
+  }
 }
 
 /* Pick a reindeer */
@@ -195,7 +230,6 @@ function startGame() {
   playerPos = 0;
   rivalPos = 0;
   turnCount = 0;
-  gameStartTime = Date.now();
   maxDiceRoll = 0;
 
   selectedName.textContent = selectedReindeer || '-';
@@ -219,7 +253,6 @@ function resetGame() {
   selectedReindeer = '';
   startGameBtn.disabled = true;
   turnCount = 0;
-  gameStartTime = null;
   maxDiceRoll = 0;
 
   for (let i = 0; i < reindeerButtons.length; i += 1) {
@@ -282,6 +315,7 @@ function doTurn() {
     return;
   }
 
+  // When effects OFF: execute immediately without delays
   playerPos = Math.min(totalSteps, playerPos + playerRoll);
   rivalPos = Math.min(totalSteps, rivalPos + rivalRoll);
 
@@ -300,6 +334,7 @@ function doTurn() {
 loadSoundSetting();
 loadAnimationsSetting();
 syncToggles(isSoundEnabled());
+syncEffectsToggle(areAnimationsEnabled());
 applyAnimationsSetting();
 setScreen('start');
 updateBoard(playerPos, rivalPos);
@@ -310,16 +345,25 @@ document.addEventListener('mouseenter', unlockAudio, { once: true, capture: true
 
 /* Events */
 if (audioToggleBtn) audioToggleBtn.addEventListener('click', toggleAudio);
+if (effectsToggleBtn) effectsToggleBtn.addEventListener('click', toggleEffects);
 if (soundToggle) soundToggle.addEventListener('change', handleSoundToggle);
 if (animationsToggle) animationsToggle.addEventListener('change', handleAnimationsToggle);
 
 for (let i = 0; i < reindeerButtons.length; i += 1) {
   reindeerButtons[i].addEventListener('click', () => handleReindeerPick(reindeerButtons[i]));
   reindeerButtons[i].addEventListener('pointerdown', unlockAudio);
-  reindeerButtons[i].addEventListener('mouseenter', () => playBellSound());
+  reindeerButtons[i].addEventListener('mouseenter', () => {
+    if (areAnimationsEnabled()) {
+      playBellSound();
+    }
+  });
 }
 
 if (startGameBtn) startGameBtn.addEventListener('click', startGame);
 if (playAgainBtn) playAgainBtn.addEventListener('click', resetGame);
 if (playAgainBtn2) playAgainBtn2.addEventListener('click', resetGame);
 if (rollBtn) rollBtn.addEventListener('click', doTurn);
+
+/* Stop all audio when page is unloaded or reloaded */
+window.addEventListener('beforeunload', stopAllSounds);
+window.addEventListener('pagehide', stopAllSounds);

@@ -1,10 +1,64 @@
 /* Dice elements */
-const diceImg = document.getElementById('diceImg');
+const gameDie = document.getElementById('gameDie');
+const gameDieFace = document.getElementById('gameDieFace');
 const diceValueText = document.getElementById('diceValueText');
+
+/* Traditional die dot positions */
+const traditionalDots = {
+  1: [{ top: 50, left: 50 }],
+  2: [
+    { top: 20, left: 20 },
+    { top: 80, left: 80 },
+  ],
+  3: [
+    { top: 20, left: 20 },
+    { top: 50, left: 50 },
+    { top: 80, left: 80 },
+  ],
+  4: [
+    { top: 20, left: 20 },
+    { top: 20, left: 80 },
+    { top: 80, left: 20 },
+    { top: 80, left: 80 },
+  ],
+  5: [
+    { top: 20, left: 20 },
+    { top: 20, left: 80 },
+    { top: 50, left: 50 },
+    { top: 80, left: 20 },
+    { top: 80, left: 80 },
+  ],
+  6: [
+    { top: 20, left: 20 },
+    { top: 20, left: 80 },
+    { top: 50, left: 20 },
+    { top: 50, left: 80 },
+    { top: 80, left: 20 },
+    { top: 80, left: 80 },
+  ],
+};
+
+/* Create traditional die face with dots*/
+function createDieFace(faceElement, num) {
+  if (!faceElement) return;
+
+  faceElement.innerHTML = '';
+  const dots = traditionalDots[num];
+
+  if (!dots) return;
+
+  dots.forEach((pos) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    dot.style.top = `${pos.top}%`;
+    dot.style.left = `${pos.left}%`;
+    faceElement.appendChild(dot);
+  });
+}
 
 /* Set dice face */
 export function setDiceFace(value) {
-  diceImg.src = `assets/images/dices/dice-${value}.png`;
+  createDieFace(gameDieFace, value);
   diceValueText.textContent = String(value);
 }
 
@@ -15,10 +69,19 @@ export function rollDice() {
 
 /* Add spin animation */
 export function startDiceSpin() {
-  diceImg.classList.add('dice-spin');
+  if (gameDie) {
+    gameDie.classList.add('rolling');
+  }
 }
 
 /* Remove spin animation */
 export function stopDiceSpin() {
-  diceImg.classList.remove('dice-spin');
+  if (gameDie) {
+    gameDie.classList.remove('rolling');
+  }
+}
+
+/* Initialize dice to 1 on load */
+if (gameDieFace) {
+  createDieFace(gameDieFace, 1);
 }

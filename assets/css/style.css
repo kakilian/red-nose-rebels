@@ -81,6 +81,7 @@ button:hover {
 }
 
 /* Top bar box */
+/* Top bar box */
 .topbar-box {
   border: none;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
@@ -91,6 +92,7 @@ button:hover {
   overflow: hidden;
 }
 
+/* Title styling */
 .topbar-box .fw-semibold {
   font-size: 1.25rem;
   color: #667eea;
@@ -99,33 +101,106 @@ button:hover {
   letter-spacing: 0.5px;
 }
 
-#audioToggleBtn {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Desktop controls visibility and layout */
+.desktop-controls {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-controls {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+  .mobile-controls {
+    display: none !important;
+  }
+
+  /* Column alignment */
+  .desktop-left {
+    justify-self: start;
+  }
+
+  .desktop-center {
+    justify-self: center;
+  }
+
+  .desktop-right {
+    justify-self: end;
+  }
+}
+
+/* Unified toggle button styling */
+.control-toggle {
   border: none;
-  color: white;
   font-weight: 700;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-#audioToggleBtn:hover {
+/* Audio toggle - ON state (success) */
+#audioToggleBtn.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+#audioToggleBtn.btn-success:hover {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 }
 
+/* Audio toggle - OFF state (secondary) */
 #audioToggleBtn.btn-secondary {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 #audioToggleBtn.btn-secondary:hover {
   background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
 }
 
+/* Effects toggle - ON state (success) */
+#effectsToggleBtn.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+#effectsToggleBtn.btn-success:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* Effects toggle - OFF state (secondary) */
+#effectsToggleBtn.btn-secondary {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+#effectsToggleBtn.btn-secondary:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* Mobile hamburger button */
 #settingsBtn {
   font-size: 1.5rem;
   color: #667eea;
@@ -395,28 +470,66 @@ button:hover {
   opacity: 0.3;
 }
 
-/* Dice image */
-.dice-img {
-  width: 80px;
-  height: 80px;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+/* Dice container */
+.die-container {
+  width: 120px;
+  height: 120px;
+  margin: 1rem auto;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  border: 4px solid #667eea;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  padding: 10px;
 }
 
-/* Dice spin animation */
-.dice-spin {
-  animation: diceSpin 0.6s linear infinite;
+.die {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.1s;
 }
 
-/* Dice keyframes */
-@keyframes diceSpin {
-  from {
-    transform: rotate(0deg);
+.die.rolling {
+  animation: diceRoll3D 0.6s ease-out;
+}
+
+/* 3D dice roll animation */
+@keyframes diceRoll3D {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: rotateX(720deg) rotateY(720deg);
   }
+}
+
+.die-face {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  background: white;
+  border-radius: 15px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Track container */
@@ -470,39 +583,56 @@ button:hover {
   overflow: hidden;
 }
 
-/* Disable animations */
-.no-anim .token {
-  transition: none;
-}
-
-.no-anim button {
+/* Disable ALL animations, transitions, and hover effects when effects are OFF */
+.no-anim,
+.no-anim * {
+  animation: none !important;
   transition: none !important;
 }
 
+.no-anim *:hover {
+  transform: none !important;
+}
+
+/* Disable hover interactions completely */
+.no-anim .reindeer-btn:hover::before {
+  opacity: 0 !important;
+}
+
 .no-anim button:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transform: none !important;
 }
 
 .no-anim .game-btn:hover {
   transform: none !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
 }
 
 .no-anim .reindeer-btn:hover {
   transform: none !important;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.5) !important;
-}
-
-.no-anim .reindeer-img {
-  transition: none !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: #111 !important;
+  border-color: #667eea !important;
 }
 
 .no-anim .reindeer-btn:hover .reindeer-img {
   transform: none !important;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)) !important;
 }
 
-.no-anim .dice-img {
-  animation: none !important;
+.no-anim .control-toggle:hover {
+  transform: none !important;
+}
+
+.no-anim .rudolph-img:hover {
+  transform: none !important;
+}
+
+.no-anim .spotify-embed:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.no-anim #settingsBtn:hover {
+  color: #667eea !important;
 }
 
 /* Token positions (0 to 10) */
@@ -667,7 +797,7 @@ button:hover {
   border-color: #764ba2;
 }
 
-/* snow effect (game screen only) */
+/* Snow effect (game screen only) */
 #screenGame .snow {
   position: absolute;
   inset: 0;
@@ -717,19 +847,19 @@ button:hover {
   position: relative;
   background-repeat: repeat-x;
   background-size: auto 100%;
-  background-position: left bottom;
-  animation: forest-run 12s linear infinite;
+  background-position: 0 center;
+  animation: forest-run 25s linear infinite;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes forest-run {
-  from {
-    background-position: 0px 50%;
+  0% {
+    background-position: 0px center;
   }
-  to {
-    background-position: -120% 100%;
+  100% {
+    background-position: -2000px center;
   }
 }
 /* Winner Composition Layout */
