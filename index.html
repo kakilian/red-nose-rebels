@@ -159,44 +159,11 @@
 
       <!-- Screen: Game -->
       <section id="screenGame" class="d-none">
-        <div class="board-box p-4 mb-4">
-          <div class="snow" aria-hidden="true"></div>
-          <div class="text-center mb-4">
-            <div class="player-info mb-3">
-              <span class="player-label">Playing as:</span>
-              <strong id="selectedName" class="player-name">-</strong>
-            </div>
-
-            <button id="rollBtn" class="btn btn-outline-dark btn-lg game-btn" type="button">🎲 Spin the Dice</button>
-          </div>
-
-          <div class="mb-4">
-            <div class="fw-semibold mb-2 track-label">YOU</div>
-            <div class="track">
-              <span id="playerToken" class="token pos-0">
-                <img id="playerTokenImg" src="" alt="Player" class="token-img" />
-              </span>
-              <span class="finish-label">FINISH</span>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <div class="fw-semibold mb-2 track-label">RUDOLPH</div>
-            <div class="track">
-              <span id="rivalToken" class="token pos-0">
-                <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="token-img" />
-              </span>
-              <span class="finish-label">FINISH</span>
-            </div>
-          </div>
-
-          <hr class="wire-divider my-4" />
-
+        <hr class="wire-divider my-4" />
           <div class="text-center">
             <h3 class="h6 mb-3 event-title">Forest Event</h3>
             <p id="eventText" class="mb-0 event-text">Ready.</p>
           </div>
-
           <div class="dice-area mt-4 text-center">
             <div class="die-container">
               <div class="die" id="gameDie">
@@ -208,7 +175,41 @@
               <strong id="diceValueText">-</strong>
             </div>
           </div>
-        </div>
+        <div class="board-box p-4 mb-4">
+          <div class="snow" aria-hidden="true"></div>
+          <div class="text-center mb-4">
+            <div class="player-info mb-3">
+              <span class="player-label">Playing as:</span>
+              <strong id="selectedName" class="player-name">-</strong>
+            </div>
+
+            <button id="rollBtn" class="btn btn-outline-dark btn-lg game-btn" type="button">🎲 Spin the Dice</button>
+          </div>
+
+          <!-- Player-->
+            <div class="race-stage">
+              <div class=" race-lane mb-4">
+                <div class="track">
+                  <span id="playerToken" class="token pos-0">
+                    <span class="token-label lane-name">YOU</span>
+                    <img id="playerTokenImg" src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Player" class="token-img" />
+                  </span>
+                  <span class="finish-label">FINISH</span>
+                </div>
+              </div>
+
+              <!-- Rudolph-->
+              <div class="race-lane mb-4 rival">
+                <div class="track">
+                  <span id="rivalToken" class="token pos-0">
+                    <span class="token-label lane-name">RUDOLPH</span>
+                    <img src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Rudolph" class="token-img" />
+                  </span>
+                  <span class="finish-label">FINISH</span>
+                </div>
+              </div>
+            </div>
+          </div>
       </section>
 
       <!-- Screen: Win -->

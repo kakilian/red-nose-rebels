@@ -94,14 +94,16 @@ export function updateBoard(playerPos, rivalPos) {
   setTokenPos(rivalToken, rivalPos);
 }
 
+
 /* Set player token image */
 export function setPlayerTokenImage(reindeerName) {
-  if (playerTokenImg && reindeerName) {
-    const imagePath = `assets/images/reindeer/${reindeerName.toLowerCase()}.png`;
-    playerTokenImg.src = imagePath;
-    playerTokenImg.alt = reindeerName;
-  }
+  if (!playerTokenImg) return;
+
+  // Keep the running sprite for the in-game token (don't swap to static PNGs)
+  playerTokenImg.src = './assets/images/reindeer/reindeer_run_sprite.png';
+  playerTokenImg.alt = reindeerName || 'Player';
 }
+
 
 /* Sync toggles UI */
 export function syncToggles(soundEnabled) {

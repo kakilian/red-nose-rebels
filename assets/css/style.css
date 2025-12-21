@@ -410,7 +410,7 @@ button:hover {
 }
 
 .player-name {
-  color: #374151;
+  color: whitesmoke;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -426,14 +426,14 @@ button:hover {
 
 /* Event area styling */
 .event-title {
-  color: #667eea;
+  color: whitesmoke;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .event-text {
-  color: #374151;
+  color: whitesmoke;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
@@ -532,15 +532,12 @@ button:hover {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Track container */
+/* Track container - Hide track visuals but keep structure */
 .track {
-  position: relative;
-  height: 60px;
-  border: 3px solid #667eea;
-  background: rgba(255, 255, 255, 0.15);
-  overflow: visible;
-  border-radius: 12px;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(102, 126, 234, 0.2);
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  height: 120px
 }
 
 /* Finish label */
@@ -558,30 +555,52 @@ button:hover {
   overflow: hidden;
 }
 
-/* Token base */
+/*=================================================================================
+RUNNING REINDEER SPRITE OVERRIDES (monica)
+=================================================================================*/
+
 .token {
+  width: 122px;  
+  height: 90px;  
+  overflow:hidden; 
+  top: auto;
+  bottom: 0;
+  transform: none;
+  z-index: 5;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  transition: left 250ms linear;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 
-/* Token image styling */
 .token-img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2px;
-  border: 2px solid #667eea;
-  overflow: hidden;
+  width: 610px;
+  height: 90px;
+
+  /* remove the circle / border look from old token style */
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  filter: none;
+
+  animation: reindeer-run 0.6s steps(4) infinite;
 }
+
+@keyframes reindeer-run {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-488px); } /* 4 shifts across 5 frames */
+}
+
+/* Optional: pause run animation if effects are OFF */
+.no-anim .token-img {
+  animation: none !important;
+}
+
+/*=================================================================================
+END RUNNING REINDEER SPRITE OVERRIDES
+=================================================================================*/
 
 /* Disable ALL animations, transitions, and hover effects when effects are OFF */
 .no-anim,
@@ -852,6 +871,10 @@ button:hover {
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  /* bottom race stage */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @keyframes forest-run {
@@ -862,6 +885,38 @@ button:hover {
     background-position: -2000px center;
   }
 }
+
+.race-stage {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  padding: 0 16px;
+}
+
+.race-lane {
+  margin-bottom: 8px !important;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/*.lane-header {
+  position: absolute;
+  left: 10px;
+  bottom: 96px;
+  z-index: 10;
+} */
+
+.lane-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
 /* Winner Composition Layout */
 .winner-composition {
   display: flex;
@@ -1050,3 +1105,4 @@ button:hover {
   font-weight: 800;
   text-shadow: 2px 2px 4px rgba(239, 68, 68, 0.3);
 }
+
