@@ -4,6 +4,8 @@
 
 ## Welcome to Red-Nose Rebels, your rebellious Christmas challenge!
 
+# Placeholder: Mock-up from Am-I-Responsive
+
 Red-Nose Rebels is a classic board game in which Father Christmas’s reindeer have grown tired of Rudolph’s prominent role during the annual festive season. Players choose one of Father Christmas’s reindeer — Dasher, Dancer, Prancer, Vixen, Comet, Cupid, Donner, or Blitzen — to challenge Rudolph in a race to the finish line.
 
 The winning reindeer not only earns the coveted pole position in the annual race to deliver presents on time, but also gets to wear Rudolph’s famous red nose (hence the name Red-Nose Rebels). While the game follows a straightforward and accessible set of rules, it encourages strategic thinking and creativity within a festive setting.
@@ -42,3 +44,27 @@ Lay groundwork for future expansion, such as additional players, game modes, or 
 ### Target Users
 
 The game is intended for casual players of all ages who enjoy simple, luck-based games with a festive theme. It is particularly suitable for users looking for a short, entertaining experience that does not require prior gaming knowledge or complex instructions.
+
+
+### User Stories
+
+1. As a developer, I want index.html to correctly reference existing favicon, fonts, CSS, and JS files so that the application loads with the intended structure and styling.
+
+2. As a user, I want the game to have a consistent visual identity so it feels polished and cohesive.
+
+3. As a user, I want to control sound and animations (on/off) so I can play comfortably depending on my device and preference.
+
+4. As a user, I want to open a close-up view of the dice result so I can clearly see what I rolled.
+
+5. As a user, I want to click a Roll button and see a dice animation so the game feels interactive, and then see the rolled result displayed clearly.
+
+6. As a user, I want the game to look dark and festive but remain easy to read so I can enjoy playing it.
+
+7. As a user, I want to clearly see when the game is finihsed so I know who won.
+
+8. As a user, I want random events to affect movement so each game feels different.
+
+9. As a user, I want to play against Rudolph so here is a clear rival in the game.
+
+10. As a user, I want my reindeer to move step by step across the board so I can track my progress.
+
