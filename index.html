@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -182,15 +185,27 @@
       <!-- Screen: Win -->
       <section id="screenWin" class="d-none">
         <div class="board-box p-5 text-center mb-4">
-          <h2 class="h3 mb-4 result-title win-title">🎉 Red Nose Winner! 🎉</h2>
-          <div class="winner-images">
+          <h2 class="h3 mb-4 result-title win-title">🎉 You Win the Red Nose! 🎉</h2>
+          <div class="winner-composition">
             <img id="winnerReindeerImg" src="" alt="Winner" class="winner-img" />
-            <span class="plus-sign">+</span>
-            <div class="red-nose">🔴</div>
+            <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
+            <div class="red-nose-badge" aria-label="Red Nose">🔴</div>
           </div>
           <div class="result-message mt-4">
-            <div class="win-line py-3 px-4 d-inline-block mb-3">You won Rudolph's Red Nose</div>
-            <p class="lead mb-0">You now lead Santa's sleigh!!</p>
+            <div class="win-line player-win py-3 px-4 d-inline-block mb-3">
+              <strong id="winnerName">You</strong>
+              lead Santa's sleigh!
+            </div>
+            <div class="game-stats mt-3">
+              <div class="stat-item">
+                <span class="stat-label">Turns:</span>
+                <strong id="statsPlayerTurns" class="stat-value">-</strong>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Max Dice:</span>
+                <strong id="statsPlayerMaxDice" class="stat-value">-</strong>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -202,13 +217,28 @@
       <!-- Screen: Lose -->
       <section id="screenLose" class="d-none">
         <div class="board-box p-5 text-center mb-4">
-          <h2 class="h3 mb-4 result-title lose-title">Red Nose Winner</h2>
-          <div class="winner-images">
+          <h2 class="h3 mb-4 result-title lose-title">Rudolph Wins the Red Nose</h2>
+          <div class="winner-composition">
             <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="winner-img" />
+            <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
+            <div class="red-nose-badge" aria-label="Red Nose">🔴</div>
           </div>
           <div class="result-message mt-4">
-            <div class="win-line py-3 px-4 d-inline-block mb-3">Rudolph keeps the Red Nose</div>
-            <p class="lead mb-0">Try again to lead Santa's sleigh.</p>
+            <div class="win-line rudolph-win py-3 px-4 d-inline-block mb-3">
+              <strong>Rudolph</strong>
+              leads Santa's sleigh
+            </div>
+            <div class="game-stats mt-3">
+              <div class="stat-item">
+                <span class="stat-label">Turns:</span>
+                <strong id="statsRudolphTurns" class="stat-value">-</strong>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Max Dice:</span>
+                <strong id="statsRudolphMaxDice" class="stat-value">-</strong>
+              </div>
+            </div>
+            <p class="lead mt-3 mb-0">Try again to win the red nose!</p>
           </div>
         </div>
 

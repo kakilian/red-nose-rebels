@@ -2,7 +2,7 @@
 const SETTINGS_KEY = 'rnr_settings';
 
 /* Sound state */
-let soundEnabled = false;
+let soundEnabled = true;
 
 /* Audio files */
 const diceSound = new Audio('assets/audio/dice-roll.mp3');
@@ -117,7 +117,7 @@ export function playLoseSound() {
 
 /* Play bell sound */
 export function playBellSound() {
-  if (!soundEnabled) return;
+  if (!soundEnabled || !audioUnlocked) return;
 
   try {
     bellSound.currentTime = 0;
