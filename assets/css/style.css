@@ -901,13 +901,6 @@ END RUNNING REINDEER SPRITE OVERRIDES
   box-shadow: none;
 }
 
-/*.lane-header {
-  position: absolute;
-  left: 10px;
-  bottom: 96px;
-  z-index: 10;
-} */
-
 .lane-name {
   font-size: 0.7rem;
   font-weight: 700;
