@@ -1,5 +1,5 @@
 
-# Placeholder: Link to Live Game
+# Link to Live Game : https://kakilian.github.io/red-nose-rebels/
 
 # Red-Nose Rebels
 
@@ -220,7 +220,7 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 ## Credits and Ackowledgements
 
 - Tim Burton's *The Night before Christmas* (1993): for inspipration and gateway into our preliminary discussions on discord &
-- Spotify: Chuck Berry christmashit -  "Run Run Rudolph"
+- Spotify: Chuck Berry's Christmas Hit -  "Run Run Rudolph"
 - Pixabay: for photos and images
 - iStock: images 
 - Youtube: research videos, - css animation, music and sound effects

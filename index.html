@@ -1,204 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Run, Rudolph, Run !</title>
-    <meta name="description" content="Run, Rudolph, Run! - a quick reindeer dice game with fun and excitement for all ages." />
 
-    <!-- Favicons -->
-    <link rel="icon" href="./assets/images/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="./assets/images/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Run, Rudolph, Run !</title>
+  <meta name="description"
+    content="Run, Rudolph, Run! - a quick reindeer dice game with fun and excitement for all ages." />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Favicons -->
+  <link rel="icon" href="./assets/images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <body class="bg-light">
-    <!-- Top bar -->
-    <header class="container py-3">
-      <div class="topbar-box d-flex align-items-center justify-content-between px-3 py-2">
-        <!-- Desktop Layout (hidden on mobile) -->
-        <div class="desktop-controls d-none d-md-grid w-100">
-          <!-- Left: Audio toggle -->
-          <div class="desktop-left">
-            <button id="audioToggleBtn" type="button" class="btn btn-sm btn-secondary control-toggle">🔇 AUDIO OFF</button>
-          </div>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-          <!-- Center: Title -->
-          <div class="desktop-center fw-semibold text-gradient">Rednose Rebels Presents!</div>
-
-          <!-- Right: Effects toggle -->
-          <div class="desktop-right">
-            <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">✨ EFFECTS ON</button>
-          </div>
+<body class="bg-light">
+  <!-- Top bar -->
+  <header class="container py-3">
+    <div class="topbar-box d-flex align-items-center justify-content-between px-3 py-2">
+      <!-- Desktop Layout (hidden on mobile) -->
+      <div class="desktop-controls d-none d-md-grid w-100">
+        <!-- Left: Audio toggle -->
+        <div class="desktop-left">
+          <button id="audioToggleBtn" type="button" class="btn btn-sm btn-secondary control-toggle">🔇 AUDIO
+            OFF</button>
         </div>
 
-        <!-- Mobile Layout (hidden on desktop) -->
-        <div class="mobile-controls d-flex d-md-none align-items-center justify-content-between w-100">
-          <!-- Center: Title -->
-          <div class="w-100 text-center fw-semibold">Run, Rudolph, Run !</div>
+        <!-- Center: Title -->
+        <div class="desktop-center fw-semibold text-gradient">Rednose Rebels Presents!</div>
 
-          <!-- Right: Hamburger button -->
-          <button
-            id="settingsBtn"
-            type="button"
-            class="btn btn-link p-0 text-dark text-decoration-none flex-shrink-0"
-            data-bs-toggle="modal"
-            data-bs-target="#settingsModal"
-            aria-label="Open settings"
-          >
-            ☰
+        <!-- Right: Effects toggle -->
+        <div class="desktop-right">
+          <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">✨ EFFECTS
+            ON</button>
+        </div>
+      </div>
+
+      <!-- Mobile Layout (hidden on desktop) -->
+      <div class="mobile-controls d-flex d-md-none align-items-center justify-content-between w-100">
+        <!-- Center: Title -->
+        <div class="w-100 text-center fw-semibold">Run, Rudolph, Run !</div>
+
+        <!-- Right: Hamburger button -->
+        <button id="settingsBtn" type="button" class="btn btn-link p-0 text-dark text-decoration-none flex-shrink-0"
+          data-bs-toggle="modal" data-bs-target="#settingsModal" aria-label="Open settings">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="container pb-4">
+    <!-- Screen: Start -->
+    <section id="screenStart" class="d-block">
+      <div class="hero-box mb-3 p-3">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Run, Rudolph, Run !</h1>
+            <p>
+              Everyone's dream comes true to lead Santa's sleigh.
+              The only problem? You must beat Rudolph through the scary,
+              dark forest to win the red nose.
+              Beware: Rudolph is fast and far more experienced than most.
+              Meet the challenge, beat Rudolph, and help Santa Claus.
+            </p>
+          </div>
+          <div class="hero-image">
+            <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img" />
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-spotify-wrapper mb-4">
+        <div class="game-intro px-3">
+          <h2>Welcome to Run, Rudolph, Run!</h2>
+          <p>Choose a reindeer to compete against Rudolph.</p>
+          <p>Roll the dice. The higher the number, the faster you move through the dark forest and closer to the front
+            of the sleigh.</p>
+          <p>Reach the finish line first to win the red nose and lead Santa's sleigh.</p>
+        </div>
+
+        <div class="spotify-player">
+          <iframe id="spotifyPlayer" data-testid="embed-iframe" class="spotify-embed"
+            src="https://open.spotify.com/embed/track/2pnPe4pJtq7689i5ydzvJJ?utm_source=generator" width="100%"
+            height="152" frameborder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="reindeer-grid">
+        <div class="reindeer-row">
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dasher">
+            <img src="assets/images/reindeer/dasher.png" alt="Dasher" class="reindeer-img" />
+            <span class="reindeer-name">Dasher</span>
+          </button>
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dancer">
+            <img src="assets/images/reindeer/dancer.png" alt="Dancer" class="reindeer-img" />
+            <span class="reindeer-name">Dancer</span>
+          </button>
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Prancer">
+            <img src="assets/images/reindeer/prancer.png" alt="Prancer" class="reindeer-img" />
+            <span class="reindeer-name">Prancer</span>
+          </button>
+        </div>
+
+        <div class="reindeer-row">
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Vixen">
+            <img src="assets/images/reindeer/vixen.png" alt="Vixen" class="reindeer-img" />
+            <span class="reindeer-name">Vixen</span>
+          </button>
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Comet">
+            <img src="assets/images/reindeer/comet.png" alt="Comet" class="reindeer-img" />
+            <span class="reindeer-name">Comet</span>
+          </button>
+        </div>
+
+        <div class="reindeer-row">
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Cupid">
+            <img src="assets/images/reindeer/cupid.png" alt="Cupid" class="reindeer-img" />
+            <span class="reindeer-name">Cupid</span>
+          </button>
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Donner">
+            <img src="assets/images/reindeer/donner.png" alt="Donner" class="reindeer-img" />
+            <span class="reindeer-name">Donner</span>
+          </button>
+          <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Blitzen">
+            <img src="assets/images/reindeer/blitzen.png" alt="Blitzen" class="reindeer-img" />
+            <span class="reindeer-name">Blitzen</span>
           </button>
         </div>
       </div>
-    </header>
 
-    <!-- Main content -->
-    <main class="container pb-4">
-      <!-- Screen: Start -->
-      <section id="screenStart" class="d-block">
-        <div class="hero-box mb-3 p-3">
-          <div class="hero-content">
-            <div class="hero-text">
-              <h1>Run, Rudolph, Run !</h1>
-              <p>
-                Everyone's dream comes true to lead Santa's sleigh.
-                The only problem? You must beat Rudolph through the scary, 
-                dark forest to win the red nose. 
-                Beware: Rudolph is fast and far more experienced than most. 
-                Meet the challenge, beat Rudolph, and help Santa Claus.
-              </p>
-            </div>
-            <div class="hero-image">
-              <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img" />
-            </div>
+      <div class="text-center mt-5">
+        <button id="startGameBtn" class="btn btn-dark btn-lg game-btn" type="button" disabled>Start Game</button>
+      </div>
+    </section>
+
+    <!------------------------------------ Screen: Start of Game board ------------------------------------->
+    <section id="screenGame" class="d-none">
+      <hr class="wire-divider my-4" />
+      <div id="particles-js"class="text-center">      <!-------- DO NOT CHANGE THIS LINE !!! -------------->
+        <h3 class="h6 mb-3 event-title">Forest Event</h3>
+        <p id="eventText" class="mb-0 event-text">Ready.</p>
+      </div>
+      <!-- All within game board area -->
+      <div class="board-box p-4 mb-4">
+        <div class="snow" aria-hidden="true"></div>
+        <div class="text-center mb-4">
+          <div class="player-info mb-3">
+            <span class="player-label">Playing as:</span>
+            <strong id="selectedName" class="player-name">-</strong>
           </div>
-        </div>
+          <!-- Dice and button row-->
+          <dev class="dice-controls mt-4">
+            <!--Dice count / face -->
+            <div class="dice-area">
+              <div class="dice-visual">
+                <div class="die-container">
+                  <div class="die" id="gameDie">
+                    <div class="die-face" id="gameDieFace"></div>
+                  </div>
+                </div>
 
-        <div class="intro-spotify-wrapper mb-4">
-          <div class="game-intro px-3">
-            <h2 class="h4 mb-3">How to Play</h2>
-            <p>Choose a reindeer to compete against Rudolph.</p>
-            <p>Roll the dice. The higher the number, the faster you move through the dark forest and closer to the front of the sleigh.</p>
-            <p>Reach the finish line first to win the red nose and lead Santa's sleigh.</p>
-          </div>
-
-          <div class="spotify-player">
-            <iframe
-              id="spotifyPlayer"
-              data-testid="embed-iframe"
-              class="spotify-embed"
-              src="https://open.spotify.com/embed/track/2pnPe4pJtq7689i5ydzvJJ?utm_source=generator"
-              width="100%"
-              height="152"
-              frameborder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-
-        <div class="reindeer-grid">
-          <div class="reindeer-row">
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dasher">
-              <img src="assets/images/reindeer/dasher.png" alt="Dasher" class="reindeer-img" />
-              <span class="reindeer-name">Dasher</span>
-            </button>
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dancer">
-              <img src="assets/images/reindeer/dancer.png" alt="Dancer" class="reindeer-img" />
-              <span class="reindeer-name">Dancer</span>
-            </button>
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Prancer">
-              <img src="assets/images/reindeer/prancer.png" alt="Prancer" class="reindeer-img" />
-              <span class="reindeer-name">Prancer</span>
-            </button>
-          </div>
-
-          <div class="reindeer-row">
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Vixen">
-              <img src="assets/images/reindeer/vixen.png" alt="Vixen" class="reindeer-img" />
-              <span class="reindeer-name">Vixen</span>
-            </button>
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Comet">
-              <img src="assets/images/reindeer/comet.png" alt="Comet" class="reindeer-img" />
-              <span class="reindeer-name">Comet</span>
-            </button>
-          </div>
-
-          <div class="reindeer-row">
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Cupid">
-              <img src="assets/images/reindeer/cupid.png" alt="Cupid" class="reindeer-img" />
-              <span class="reindeer-name">Cupid</span>
-            </button>
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Donner">
-              <img src="assets/images/reindeer/donner.png" alt="Donner" class="reindeer-img" />
-              <span class="reindeer-name">Donner</span>
-            </button>
-            <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Blitzen">
-              <img src="assets/images/reindeer/blitzen.png" alt="Blitzen" class="reindeer-img" />
-              <span class="reindeer-name">Blitzen</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="text-center mt-5">
-          <button id="startGameBtn" class="btn btn-dark btn-lg game-btn" type="button" disabled>Start Game</button>
-        </div>
-      </section>
-
-      <!-- Screen: Game -->
-      <section id="screenGame" class="d-none">
-        <hr class="wire-divider my-4" />
-          <div class="text-center">
-            <h3 class="h6 mb-3 event-title">Forest Event</h3>
-            <p id="eventText" class="mb-0 event-text">Ready.</p>
-          </div>
-          <div class="dice-area mt-4 text-center">
-            <div class="die-container">
-              <div class="die" id="gameDie">
-                <div class="die-face" id="gameDieFace"></div>
+                <div class="small mt-2 dice-info">
+                  Roll:
+                  <strong id="diceValueText">-</strong>
+                </div>
               </div>
             </div>
-            <div class="small mt-2 dice-info">
-              Roll:
-              <strong id="diceValueText">-</strong>
-            </div>
-          </div>
-        <div class=".board-box p-4 mb-4">
-          <div id="particles-js" aria-hidden="true"></div>
-          <div class="text-center mb-4">
-            <div class="player-info mb-3">
-              <span class="player-label">Playing as:</span>
-              <strong id="selectedName" class="player-name">-</strong>
-            </div>
-
-            <button id="rollBtn" class="btn btn-outline-dark btn-lg game-btn" type="button">🎲 Spin the Dice</button>
-          </div>
-
-          <!-- Player-->
+            <!-- Spin dice button -->
+            <button id="rollBtn" class="btn btn-outline-dark game-btn" type="button">🎲Spin</button>
+            <!-- Player-->
             <div class="race-stage">
               <div class=" race-lane mb-4">
                 <div class="track">
                   <span id="playerToken" class="token pos-0">
                     <span class="token-label lane-name">YOU</span>
-                    <img id="playerTokenImg" src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Player" class="token-img" />
+                    <img id="playerTokenImg" src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Player"
+                      class="token-img" />
                   </span>
                   <span class="finish-label">FINISH</span>
                 </div>
               </div>
-
-              <!-- Rudolph-->
+            </div>
+            <!-- Rudolph-->
+            <div class="race-stage">
               <div class="race-lane mb-4 rival">
                 <div class="track">
                   <span id="rivalToken" class="token pos-0">
@@ -209,104 +207,108 @@
                 </div>
               </div>
             </div>
-          </div>
-      </section>
-
-      <!-- Screen: Win -->
-      <section id="screenWin" class="d-none">
-        <div class="board-box p-5 text-center mb-4">
-          <h2 class="h3 mb-4 result-title win-title">🎉 You Win the Red Nose! 🎉</h2>
-          <div class="winner-composition">
-            <img id="winnerReindeerImg" src="" alt="Winner" class="winner-img" />
-            <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
-            <div class="red-nose-badge" aria-label="Red Nose">🔴</div>
-          </div>
-          <div class="result-message mt-4">
-            <div class="win-line player-win py-3 px-4 d-inline-block mb-3">
-              <strong id="winnerName">You</strong>
-              takes the lead!
-            </div>
-            <div class="game-stats mt-3">
-              <div class="stat-item">
-                <span class="stat-label">Turns:</span>
-                <strong id="statsPlayerTurns" class="stat-value">-</strong>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Max Dice:</span>
-                <strong id="statsPlayerMaxDice" class="stat-value">-</strong>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
+    </section>
+    <!--------------------------------------- End of Game board------------------------------------------>
 
-        <div class="text-center">
-          <button id="playAgainBtn" class="btn btn-outline-dark btn-lg game-btn" type="button">🎮 Play Again</button>
+
+    <!-- Screen: Win -->
+    <section id="screenWin" class="d-none">
+      <div class="board-box p-5 text-center mb-4">
+        <h2 class="h3 mb-4 result-title win-title">🎉 You Win the Red Nose! 🎉</h2>
+        <div class="winner-composition">
+          <img id="winnerReindeerImg" src="" alt="Winner" class="winner-img" />
+          <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
+          <div class="red-nose-badge" aria-label="Red Nose">🔴</div>
         </div>
-      </section>
-
-      <!-- Screen: Lose -->
-      <section id="screenLose" class="d-none">
-        <div class="board-box p-5 text-center mb-4">
-          <h2 class="h3 mb-4 result-title lose-title">Rudolph Wins the Red Nose</h2>
-          <div class="winner-composition">
-            <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="winner-img" />
-            <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
-            <div class="red-nose-badge" aria-label="Red Nose">🔴</div>
+        <div class="result-message mt-4">
+          <div class="win-line player-win py-3 px-4 d-inline-block mb-3">
+            <strong id="winnerName">You</strong>
+            takes the lead!
           </div>
-          <div class="result-message mt-4">
-            <div class="win-line rudolph-win py-3 px-4 d-inline-block mb-3">
-              <strong>Rudolph</strong>
-              leads Santa's sleigh
+          <div class="game-stats mt-3">
+            <div class="stat-item">
+              <span class="stat-label">Turns:</span>
+              <strong id="statsPlayerTurns" class="stat-value">-</strong>
             </div>
-            <div class="game-stats mt-3">
-              <div class="stat-item">
-                <span class="stat-label">Turns:</span>
-                <strong id="statsRudolphTurns" class="stat-value">-</strong>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Max Dice Roll:</span>
-                <strong id="statsRudolphMaxDice" class="stat-value">-</strong>
-              </div>
-            </div>
-            <p class="lead mt-3 mb-0">Try again to win the red nose!</p>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <button id="playAgainBtn2" class="btn btn-outline-dark btn-lg game-btn" type="button">🎮 Play Again</button>
-        </div>
-      </section>
-    </main>
-
-    <!-- Settings modal -->
-    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-6" id="settingsTitle">Settings</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <div class="modal-body">
-            <div class="form-check form-switch mb-3">
-              <input class="form-check-input" type="checkbox" role="switch" id="soundToggle" />
-              <label class="form-check-label" for="soundToggle">Sound</label>
-            </div>
-
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="animationsToggle" checked />
-              <label class="form-check-label" for="animationsToggle">Animations</label>
+            <div class="stat-item">
+              <span class="stat-label">Max Dice:</span>
+              <strong id="statsPlayerMaxDice" class="stat-value">-</strong>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="text-center">
+        <button id="playAgainBtn" class="btn btn-outline-dark btn-lg game-btn" type="button">🎮 Play Again</button>
+      </div>
+    </section>
+
+    <!-- Screen: Lose -->
+    <section id="screenLose" class="d-none">
+      <div class="board-box p-5 text-center mb-4">
+        <h2 class="h3 mb-4 result-title lose-title">Rudolph Wins the Red Nose</h2>
+        <div class="winner-composition">
+          <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="winner-img" />
+          <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
+          <div class="red-nose-badge" aria-label="Red Nose">🔴</div>
+        </div>
+        <div class="result-message mt-4">
+          <div class="win-line rudolph-win py-3 px-4 d-inline-block mb-3">
+            <strong>Rudolph</strong>
+            leads Santa's sleigh
+          </div>
+          <div class="game-stats mt-3">
+            <div class="stat-item">
+              <span class="stat-label">Turns:</span>
+              <strong id="statsRudolphTurns" class="stat-value">-</strong>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Max Dice Roll:</span>
+              <strong id="statsRudolphMaxDice" class="stat-value">-</strong>
+            </div>
+          </div>
+          <p class="lead mt-3 mb-0">Try again to win the red nose!</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="playAgainBtn2" class="btn btn-outline-dark btn-lg game-btn" type="button">🎮 Play Again</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Settings modal -->
+  <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-6" id="settingsTitle">Settings</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="soundToggle" />
+            <label class="form-check-label" for="soundToggle">Sound</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="animationsToggle" checked />
+            <label class="form-check-label" for="animationsToggle">Animations</label>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-    <!-- Main script -->
-    <script type="module" src="assets/js/script.js"></script>
-  </body>
+  <!-- Main script -->
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+
 </html>
