@@ -1,78 +1,235 @@
-# red-nose-rebels
 
-## Audio Management
+# Placeholder: Link to Live Game
 
-The game uses sound to make playing more fun. I organized all the audio files and made them work smoothly across the whole project.
+# Red-Nose Rebels
 
-**How sounds are loaded:**
-When the game starts, all sounds (dice rolling, winning, losing, and the bell when you pick a reindeer) are loaded from the `assets/audio` folder. Each sound is set up once and stored in memory so it can be played quickly when needed.
+## Welcome to Red-Nose Rebels, your rebellious Christmas challenge!
 
-**How sounds are played and reused:**
-Instead of creating new sounds every time, the same sound objects are used over and over. When you roll the dice, the dice sound plays. When you hover over a reindeer, a bell sound plays. After each sound finishes, it stops and resets to the beginning so it can play again the next time.
+Placeholder: Mock-up from Am-I-Responsive
 
-**Stopping sounds:**
-If something else happens in the game, all sounds stop at once. This prevents sounds from overlapping and getting messy. For example, if you click a button while the dice sound is playing, the old sound stops immediately.
+Red-Nose Rebels is a classic board game in which Father Christmas’s reindeer have grown tired of Rudolph’s prominent role during the annual festive season. Players choose one of Father Christmas’s reindeer — Dasher, Dancer, Prancer, Vixen, Comet, Cupid, Donner, or Blitzen — to challenge Rudolph in a race to the finish line.
 
-**Better game experience:**
-Sound gives you instant feedback. You hear a bell when you pick a reindeer, a rolling noise when the dice rolls, and cheering when you win. This makes the game feel more alive and exciting.
+The winning reindeer not only earns the coveted pole position in the annual race to deliver presents on time, but also gets to wear Rudolph’s famous red nose (hence the name *Red-Nose Rebels*). While the game follows a straightforward and accessible set of rules, it encourages strategic thinking and creativity within a festive setting.
 
-**User control:**
-Players can turn sound on and off with the audio button at the top. When you close the game and come back later, the site remembers if you had sound on or off.
+So, join us on the track and compete to claim the most famous red nose in history. After all, rolling the dice has never been more fun!
 
-**Browser protection:**
-Modern browsers block sound from playing automatically to protect users from annoying websites. Because of this, when you first load the game, you need to click somewhere on the page to unlock the sounds. After that, the bell will play every time you move your mouse over a reindeer card, or when you click on it to pick it for your race.
+---
 
+## Purpose, Goals and User Information
 
-## Bootstrap Usage and Animations
+### Purpose
 
-I used Bootstrap and CSS animations to create a clean, modern look and make the site feel responsive on all devices.
+*Red-Nose Rebels* is a festive, browser-based board game designed to provide an engaging and accessible gaming experience inspired by traditional dice-based race games. The project combines playful storytelling with interactive gameplay, focusing on usability, visual appeal, and responsiveness across devices. It also serves as a technical demonstration of our front-end development skills within a creative, seasonal context.
 
-**Bootstrap for layout and responsiveness:**
-Bootstrap helped me build the page structure quickly. Buttons use Bootstrap classes for consistent styling and sizing. The grid system makes sure everything looks good on phones, tablets, and computers. Containers and spacing (`padding`, `margin`, `gap`) keep things organized and easy to read. Elements like modals (popup windows) and responsive menus come built-in from Bootstrap.
+### Primary Goals
 
-**Simple animations:**
-I added animations to make the game feel more alive. Here are the animations I created:
+- Create a fun and intuitive dice-based game that can be easily understood and played by a wide audience.  
+- Deliver a visually engaging experience through animations, sound effects, and themed design elements.  
+- Implement clear game logic that allows a human player to compete against a computer-controlled opponent.  
+- Ensure the game is fully responsive and playable on mobile, tablet, and desktop devices.
 
-- **Button hover effects:** When you point at a button, it moves up slightly and gets a shadow, making it feel clickable.
-- **Dice spinning:** When you roll the dice, it spins smoothly in a circle for a short moment.
-- **Snow falling:** In the win and lose screens, snowflakes gently fall down, creating a winter feeling.
-- **Winner celebrations:** When you win, your reindeer bounces up and down. An arrow slides back and forth to guide your eye. A red nose blinks to celebrate Rudolph's magic.
-- **Victory animations:** The winning reindeer bounces and pulses to show excitement.
+### Secondary Goals
 
-All these animations use CSS transitions (smooth color and size changes on hover) and keyframe animations (more complex movements). They run smoothly without slowing down the game.
+- Demonstrate technical competence in HTML, CSS, and JavaScript through interactive elements, animations, and game logic.  
+- Apply modern front-end practices, including structured assets, reusable components, and clean code organisation.  
+- Explore user experience design principles such as feedback, accessibility, and intuitive interaction.  
+- Lay groundwork for future expansion, such as additional players, game modes, or enhanced visual effects.
 
-## Reindeer Cards and Game Screen
+### Target Users
 
-**How the reindeer cards work:**
-Each reindeer is a button with an image, name, and colorful styling. The cards use Bootstrap button classes as a base, then I added custom colors and effects. Each button holds the reindeer's name using a `data-reindeer` attribute so the game knows which one you picked.
+The game is intended for casual players of all ages who enjoy simple, luck-based games with a festive theme. It is particularly suitable for users looking for a short, entertaining experience that does not require prior gaming knowledge or complex instructions.
 
-When you point your mouse at a card, it moves up, gets bigger, and the reindeer image inside rotates and scales up. The card changes from white to a purple gradient. When you click a card, it stays highlighted so you know which reindeer you chose. All of this happens smoothly with CSS transitions (smooth color and position changes).
+---
 
-**How the game screen is organized:**
-The game screen is divided into clear sections:
+## User Stories
 
-- **Top area:** Shows which reindeer you picked and the "Spin the Dice" button.
-- **Racing tracks:** Two horizontal tracks (one for you, one for Rudolph) with your token and Rudolph's token moving along them. The tracks have borders and gentle shadows to stand out.
-- **Dice section:** The dice image appears here when you roll, and it spins with animation while rolling.
-- **Event area:** After each roll, a message tells you if something special happened (like slipping on ice or finding a shortcut).
+- As a user, we want the game to have a consistent visual identity so it feels polished and cohesive.  
+- As a user, we want to control sound and animations (on/off) so we can play comfortably depending on our device and preference.  
+- As a user, we want to open a close-up view of the dice result so we can clearly see what we rolled.  
+- As a user, we want to click a Roll button and see a dice animation so the game feels interactive, and then see the rolled result displayed clearly.  
+- As a user, we want the game to look dark and festive but remain easy to read so we can enjoy playing it.  
+- As a user, we want to clearly see when the game is finished so we know who won.  
+- As a user, we want random events to affect movement so each game feels different.  
+- As a user, we want to play against Rudolph so there is a clear rival in the game.  
+- As a user, we want our reindeer to move step by step across the board so we can track our progress.
 
-The whole game screen has a light gradient background with a subtle glass-morphism effect (a frosted glass look). This makes it feel modern and keeps the focus on the game. Everything is centered and responsive, so it looks good on phones, tablets, and computers.
+---
 
-**Token movement:**
-The player and Rudolph tokens are positioned along the track using CSS classes. As you roll the dice, the JavaScript code moves the tokens by adding new position classes. This makes the animation smooth and the code clean.
+## Design
 
+### Visual Design
+
+The main design goal was to base the game on an unconventional festive theme. Spooky trees appear in the background, through which the racing reindeer must travel. While the game is inspired by Tim Burton’s *The Nightmare Before Christmas*, it does not replicate its Halloween-inspired aesthetic. Instead, the game pays homage both to traditional festive imagery and to the darker undercurrents that often accompany such cultural events.
+
+Finally, *Red-Nose Rebels* aims to appeal to players who question received wisdom and tradition by challenging Rudolph’s prominent position as *pars pro toto* for all rebellious spirits who embrace the festive season without uncritically accepting the status quo.
+
+### Audio Management
+
+We used sound to make playing more fun. We organized all the audio files and ensured they work smoothly across the project.
+
+- **How sounds are loaded:** When the game starts, all sounds (dice rolling, winning, losing, and the bell when you pick a reindeer) are loaded from the `assets/audio` folder. Each sound is set up once and stored in memory so it can be played quickly when needed.  
+- **How sounds are played and reused:** Instead of creating new sound objects every time, the same objects are reused. When you roll the dice, the dice sound plays. When you hover over a reindeer, a bell sound plays. After each sound finishes, it stops and resets so it can play again the next time.  
+- **Stopping sounds:** If another event happens, all sounds stop at once to prevent overlapping. For example, if you click a button while the dice sound is playing, the old sound stops immediately.  
+- **Better game experience:** Sound provides instant feedback — a bell when picking a reindeer, a rolling noise when the dice rolls, and cheering when you win.  
+- **User control:** Players can turn sound on and off with the audio button at the top. The site remembers the preference on return.  
+- **Browser protection:** Modern browsers block auto-playing sounds, so players need to click once on the page to unlock audio. After that, sounds play as intended.
+
+### Bootstrap Utilisation and Animations
+
+We used Bootstrap and CSS animations to create a clean, modern look and make the site feel responsive on all devices.
+
+- **Bootstrap for layout and responsiveness:** Buttons use Bootstrap classes for consistent styling. The grid system ensures the layout looks good on phones, tablets, and computers. Containers and spacing (padding, margin, gap) keep things organized. Elements like modals and responsive menus are built-in.  
+- **Simple animations:**  
+  - Button hover effects: Moves slightly and casts a shadow.  
+  - Dice spinning: Spins smoothly when rolling.  
+  - Snow falling: Appears on win and lose screens.  
+  - Winner celebrations: Reindeer bounces; arrow guides eye; red nose blinks.  
+  - Victory animations: Winning reindeer pulses and bounces.  
+All animations use CSS transitions and keyframes and run smoothly without slowing the game.
+
+### Reindeer Cards and Game Screen
+
+- **Reindeer cards:** Each card is a button with an image, name, and styling. We added custom colors and effects. Each button holds a `data-reindeer` attribute so the game knows which reindeer was chosen. Hovering enlarges and rotates the image, and the card changes from white to a purple gradient. Clicking keeps it highlighted.  
+- **Game screen organization:**  
+  - **Top area:** Shows the chosen reindeer and the "Spin the Dice" button.  
+  - **Racing tracks:** Two horizontal tracks (player and Rudolph) with tokens moving step by step.  
+  - **Dice section:** Dice image spins when rolled.  
+  - **Event area:** Displays messages after each roll (slipping, shortcuts).  
+  - Background: Light gradient with subtle glass-morphism effect. Centered and responsive layout.
+
+- **Token movement:** Player and Rudolph tokens are moved by adding position classes in JavaScript, creating smooth animations and clean code.
+
+---
 
 ## Wireframes
 
-Before I started coding, I drew wireframes to plan the entire project. Wireframes are simple drawings that show where things go on the screen.
+Before development began, we used wireframes to plan the entire project. They illustrate:
 
-**What the wireframes show:**
-The wireframes display all four game screens: the start screen (where you pick a reindeer), the game screen (where you roll dice and race), the win screen (when you reach the finish), and the lose screen (when Rudolph wins). Each wireframe shows where buttons, text, and game elements should be placed.
+- Start screen (choose reindeer)  
+- Game screen (roll dice and race)  
+- Win screen (player reaches finish)  
+- Lose screen (Rudolph wins)  
 
-**Mobile-first design:**
-I designed the wireframes for phones first, then made sure they work well on bigger screens like tablets and computers. This makes sure the game is easy to play on any device.
+Wireframes guided layout, spacing, button placement, and screen flow. The project was designed mobile-first to ensure accessibility on phones, tablets, and computers.
 
-**Wireframes guided development:**
-During coding, I looked back at the wireframes to remember how the layout should look. They helped me make the right decisions about spacing, button placement, and screen flow. The wireframes acted like a map to build the game.
 
-![Project wireframes showing all game screens](documentation/wireframes.png)
+![Wireframes](documentation/wireframes.png)
+
+
+## Game Features
+
+### Placeholder screenshots of game features: background, reindeer, dice and counters etc.
+
+
+## Future Features and Extensions
+
+### Gameplay Enhancements
+- **Multiple Player Mode:** Allow two or more human players to compete on the same track or via online multiplayer.  
+- **Customizable Reindeer:** Let players choose or unlock new reindeer characters with unique appearances or abilities.  
+- **Power-Ups and Hazards:** Add special tiles, bonuses, or obstacles on the track to make gameplay more strategic.  
+- **Alternative Dice Mechanics:** Introduce dice with special effects (e.g., double rolls, freeze turns) or custom dice faces.  
+- **Level-based Challenges:** Different tracks or boards with increasing difficulty or unique thematic elements.  
+
+### Visual and Audio Improvements
+- **Enhanced Animations:** More dynamic dice rolls, reindeer movements, and celebratory effects for wins or losses.  
+- **Thematic Environments:** Seasonal variations (snow, night mode, different festive landscapes).  
+- **Customizable Music & Sounds:** Let users pick background music or sound themes for a personalized experience.  
+- **Particle Effects:** Sparkles, snow, or confetti when events occur (rolling dice, winning, etc.).  
+
+### User Experience & Accessibility
+- **Tutorial Mode:** An interactive guide for new players explaining rules and controls.  
+- **Adaptive Difficulty:** Adjust the computer’s AI for beginners, intermediate, or expert players.  
+- **Accessibility Options:** High-contrast mode, screen reader support, and keyboard-only controls.  
+- **Saved Progress & Leaderboards:** Track player statistics, high scores, and achievements over multiple sessions.  
+
+### Technical Improvements
+- **Mobile App Version:** Port the game to iOS or Android for a native mobile experience.  
+- **Progressive Web App (PWA):** Allow offline play and installation as a standalone app.  
+- **Code Refactoring:** Modularize JavaScript for maintainability and add automated testing.  
+- **Database Integration:** Store player profiles, scores, and customization options in a backend.  
+
+### Community & Engagement Features
+- **Reindeer Unlockables:** Unlock new characters, skins, or accessories for milestones or achievements.  
+- **Seasonal Events:** Limited-time boards, dice, or challenges tied to holidays.  
+- **Custom Challenges:** Users can create and share their own tracks or game scenarios.  
+- **Social Sharing:** Share results, victories, or funny moments on social media.  
+
+
+## Tools and Technologies
+
+For this project, we used the following tools and technologies:
+
+- **HTML** – for structuring the game and creating interactive elements.  
+- **CSS** – for styling, layout, and animations.  
+- **JavaScript** – for implementing game logic, dice rolls, and token movement.  
+- **GitHub** – for version control and collaboration.  
+- **Balsamiq** – for wireframing and planning the user interface.  
+- **VS Code** – as our primary code editor for development.  
+
+
+## Bug Documentation
+
+### Placeholder for documented bugs.
+
+
+## Deployment
+
+### GitHub Pages
+
+The site was deployed to GitHub Pages. The steps to deploy are as follows:
+
+* In the **GitHub repository**, navigate to the "Settings" tab.
+* In Settings, click on the "Pages" link from the menu on the left.
+* From the "Build and deployment" section, click the drop-down called "Branch", and select the main branch, then click "Save".
+* The page will be automatically refreshed with a detailed message display to indicate the successful deployment.
+* Allow up to 5 minutes for the site to fully deploy.
+
+The live link can be found on **GitHub Pages**.
+
+### Local Development
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the **GitHub repository**.
+2. Locate and click on the green "Code" button at the very top, above the commits and files.
+3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy" button to copy the URL to your clipboard.
+4. Open "Git Bash" or "Terminal".
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your IDE Terminal, type the following command to clone the repository:
+   * `git clone https://github.com/[YOUR-USERNAME]/red-nose-rebels.git`
+7. Press "Enter" to create your local clone.
+
+To run locally:
+
+1. Open the `index.html` file in your browser, or
+2. Use a local development server such as Live Server in VS Code
+
+#### Forking
+
+By forking the GitHub Repository, you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the **GitHub Repository**.
+2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+
+## Credits and Ackowledgements
+
+- Tim Burton's *The Night before Christmas* (1993): for inspipration and gateway into our preliminary discussions on discord &
+- Spotify: Chuck Berry christmashit -  "Run Run Rudolph"
+- Pixabay: for photos and images
+- iStock: images 
+- Youtube: research videos, - css animation, music and sound effects
+- CHATgpt: debugging
+
+## Contributors:
+
+- [Katarina Kilian](https://github.com/kakilian) 
+- [Monica Thomas](https://github.com/monicathomas8)
+- [Dario](https://github.com/Drake-Designer)
+- [Dr Sascha Klement](https://github.com/Sascha-netizen)
+
