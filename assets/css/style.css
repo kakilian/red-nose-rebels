@@ -28,13 +28,10 @@ button:hover {
 
 /* Game action buttons */
 .game-btn {
-  padding: 0.875rem 2.5rem !important;
-  font-size: 1.25rem !important;
+  padding: 0.6rem 1.4rem !important;
   font-weight: 700 !important;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 12px !important;
-  border-width: 3px !important;
+  border-radius: 14px !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
@@ -410,7 +407,7 @@ button:hover {
 }
 
 .player-name {
-  color: whitesmoke;
+  color: red;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -861,7 +858,7 @@ END RUNNING REINDEER SPRITE OVERRIDES
 
 /* Forest Background Animation */
 #screenGame .board-box {
-  background-image: url('../images/forest/forest-eyelevel.jpg');
+  background-image: url('../images/forest/forest2.jpg');
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
   position: relative;
   background-repeat: repeat-x;
