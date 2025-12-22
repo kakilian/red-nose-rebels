@@ -813,47 +813,22 @@ END RUNNING REINDEER SPRITE OVERRIDES
   border-color: #764ba2;
 }
 
-/* Snow effect (game screen only) */
-#screenGame .snow {
+/* Snow using Particles.js */
+#particles-js {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  border-radius: 20px;
-  overflow: hidden;
+  background: transparent;
 }
 
-#screenGame .snow::before,
-#screenGame .snow::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent 70%),
-    radial-gradient(1.5px 1.5px at 60% 10%, rgba(255, 255, 255, 0.6), transparent 70%),
-    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.7), transparent 70%),
-    radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.5), transparent 70%);
-  background-size: 70px 70px;
-  animation: snowFall 10s linear infinite;
-  border-radius: 20px;
+#screenGame #particles-js canvas {
+  background: transparent !important;
 }
 
-#screenGame .snow::after {
-  animation-duration: 42s;
-  opacity: 0.5;
-}
-
-/* Ensure content is above snow */
-#screenGame .board-box > *:not(.snow) {
+#screenGame .board-box > *:not(#particles-js) {
   position: relative;
   z-index: 2;
-}
-@keyframes snowFall {
-  from {
-    transform: translateY(-8%);
-  }
-  to {
-    transform: translateY(8%);
-  }
 }
 
 /* Forest Background Animation */
