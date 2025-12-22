@@ -47,7 +47,6 @@ const eventText = document.getElementById('eventText');
 
 const reindeerButtons = document.querySelectorAll('.reindeer-btn');
 
-
 /* Update game stats */
 function updateGameStats() {
   const statsPlayerTurns = document.getElementById('statsPlayerTurns');
@@ -248,6 +247,53 @@ function resetGame() {
   if (spotifyPlayer) {
     spotifyPlayer.src = 'https://open.spotify.com/embed/track/2pnPe4pJtq7689i5ydzvJJ?utm_source=generator&autoplay=true';
   }
+}
+
+/* Apply random event */
+function applyRandomEvent() {
+  const random = Math.random();
+
+  // Remove previous event classes
+  eventText.className = 'mb-0 event-text';
+
+  // 30% chance: no event
+  if (random < 0.3) {
+    eventText.textContent = 'No special events.';
+    eventText.classList.add('event-neutral');
+    return;
+  }
+
+  // Add animation class
+  eventText.classList.add('event-active');
+
+  // 25% chance: player moves forward +1
+  if (random < 0.55) {
+    playerPos = Math.min(totalSteps, playerPos + 1);
+    eventText.textContent = '🎁 Lucky boost! You move +1 step!';
+    eventText.classList.add('event-boost');
+    return;
+  }
+
+  // 20% chance: player moves backward -1
+  if (random < 0.75) {
+    playerPos = Math.max(0, playerPos - 1);
+    eventText.textContent = '❄️ Slippery ice! You slide back -1 step!';
+    eventText.classList.add('event-penalty');
+    return;
+  }
+
+  // 15% chance: rival moves backward -1
+  if (random < 0.9) {
+    rivalPos = Math.max(0, rivalPos - 1);
+    eventText.textContent = '⛄ Rudolph stumbles! He goes back -1 step!';
+    eventText.classList.add('event-boost');
+    return;
+  }
+
+  // 10% chance: rival moves forward +1
+  rivalPos = Math.min(totalSteps, rivalPos + 1);
+  eventText.textContent = '💨 Strong wind pushes Rudolph +1 step!';
+  eventText.classList.add('event-rival');
 }
 
 /* One turn */

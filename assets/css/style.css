@@ -433,14 +433,59 @@ button:hover {
 }
 
 .event-text {
-  color: whitesmoke;
+  color: #1e293b;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  background: white;
   border-radius: 12px;
   display: inline-block;
   overflow: hidden;
+  min-width: 280px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Event type colors */
+.event-text.event-neutral {
+  background: white;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  color: #667eea;
+}
+
+.event-text.event-boost {
+  background: white;
+  border: 2px solid rgba(34, 197, 94, 0.5);
+  color: #15803d;
+}
+
+.event-text.event-penalty {
+  background: white;
+  border: 2px solid rgba(239, 68, 68, 0.5);
+  color: #dc2626;
+}
+
+.event-text.event-rival {
+  background: white;
+  border: 2px solid rgba(251, 191, 36, 0.5);
+  color: #d97706;
+}
+
+/* Event animation */
+@keyframes eventPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.event-text.event-active {
+  animation: eventPulse 0.5s ease;
 }
 
 /* Dice info styling */
@@ -537,7 +582,7 @@ button:hover {
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  height: 120px
+  height: 120px;
 }
 
 /* Finish label */
@@ -560,9 +605,9 @@ RUNNING REINDEER SPRITE OVERRIDES (monica)
 =================================================================================*/
 
 .token {
-  width: 122px;  
-  height: 90px;  
-  overflow:hidden; 
+  width: 122px;
+  height: 90px;
+  overflow: hidden;
   top: auto;
   bottom: 0;
   transform: none;
@@ -589,8 +634,12 @@ RUNNING REINDEER SPRITE OVERRIDES (monica)
 }
 
 @keyframes reindeer-run {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-488px); } /* 4 shifts across 5 frames */
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-488px);
+  } /* 4 shifts across 5 frames */
 }
 
 /* Optional: pause run animation if effects are OFF */
@@ -1098,4 +1147,3 @@ END RUNNING REINDEER SPRITE OVERRIDES
   font-weight: 800;
   text-shadow: 2px 2px 4px rgba(239, 68, 68, 0.3);
 }
-
