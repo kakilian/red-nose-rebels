@@ -62,7 +62,9 @@ function startSnowParticles() {
   window.particlesJS('particles-js', {
     particles: {
       number: { value: 120, density: { enable: true, value_area: 900 } },
-      color: { value: '#ffffff' },
+      color: {
+        value: ["#8b5cf6", "#1f1f1f", "#c9a227", "#C11C84"]
+      },
       shape: { type: 'circle' },
       opacity: { value: 0.6, random: true },
       size: { value: 3, random: true },
