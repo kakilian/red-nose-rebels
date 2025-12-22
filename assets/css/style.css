@@ -423,14 +423,14 @@ button:hover {
 
 /* Event area styling */
 .event-title {
-  color: whitesmoke;
+  color: #667eea;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .event-text {
-  color: whitesmoke;
+  color: #667eea;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
@@ -822,14 +822,14 @@ END RUNNING REINDEER SPRITE OVERRIDES
   background: transparent;
 }
 
-#screenGame #particles-js canvas {
+ #screenGame #particles-js canvas {
   background: transparent !important;
-}
+} 
 
 #screenGame .board-box > *:not(#particles-js) {
   position: relative;
   z-index: 2;
-}
+} 
 
 /* Forest Background Animation */
 #screenGame .board-box {
@@ -862,12 +862,12 @@ END RUNNING REINDEER SPRITE OVERRIDES
   position: relative;
   left: 0;
   right: 0;
-  bottom: 12px;
+  bottom: 3px;
   padding: 0 16px;
 }
 
 .race-lane {
-  margin-bottom: 8px !important;
+  margin-bottom: 2px !important;
   padding: 0;
   background: transparent;
   box-shadow: none;
@@ -877,7 +877,7 @@ END RUNNING REINDEER SPRITE OVERRIDES
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: whitesmoke;
+  color: #667eea;
   padding: 3px 8px;
   border-radius: 999px;
 }
