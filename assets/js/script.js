@@ -47,31 +47,6 @@ const eventText = document.getElementById('eventText');
 
 const reindeerButtons = document.querySelectorAll('.reindeer-btn');
 
-/* Random event */
-function applyRandomEvent() {
-  const chance = Math.floor(Math.random() * 4) + 1;
-
-  if (chance !== 1) {
-    eventText.textContent = 'No event. Keep running.';
-    return;
-  }
-
-  const eventType = Math.floor(Math.random() * 3) + 1;
-
-  if (eventType === 1) {
-    playerPos = Math.max(0, playerPos - 1);
-    eventText.textContent = 'Icy ground! Move back 1 step.';
-    return;
-  }
-
-  if (eventType === 2) {
-    playerPos = Math.min(totalSteps, playerPos + 1);
-    eventText.textContent = 'Dark shortcut! Move forward 1 step.';
-    return;
-  }
-
-  eventText.textContent = 'Spooky wind! Nothing happens.';
-}
 
 /* Update game stats */
 function updateGameStats() {

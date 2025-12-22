@@ -219,11 +219,12 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 ## Credits and Ackowledgements
 
-- ChatGPT: for architecture and debugging
-- Claude Ai: for inspiration and debugging
+- Tim Burton's *The Night before Christmas* (1993): for inspipration and gateway into our preliminary discussions on discord &
+- Spotify: Chuck Berry christmashit -  "Run Run Rudolph"
 - Pixabay: for photos and images
-- Youtube: for music and sound effects
-- Tim Burton's *The Night before Christmas* (1993): for inspipration and gateway into our preliminary discussions on discord
+- iStock: images 
+- Youtube: research videos, - css animation, music and sound effects
+- CHATgpt: debugging
 
 ## Contributors:
 
