@@ -1,5 +1,5 @@
 
-# Placeholder: Link to Live Game
+# Link to Live Game : https://kakilian.github.io/red-nose-rebels/
 
 # Red-Nose Rebels
 
