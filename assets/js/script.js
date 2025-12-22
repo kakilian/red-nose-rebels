@@ -48,6 +48,78 @@ const eventText = document.getElementById('eventText');
 const reindeerButtons = document.querySelectorAll('.reindeer-btn');
 
 
+/* Snow effect with particles.js */
+function startSnowParticles() {
+  const el = document.getElementById('particles-js');
+  if (!el) return;
+
+  // Guard: library not loaded yet
+  if (typeof window.particlesJS !== 'function') return;
+
+  // Avoid duplicate canvases if re-entering the game screen
+  el.innerHTML = '';
+
+  window.particlesJS('particles-js', {
+    particles: {
+      number: { value: 120, density: { enable: true, value_area: 900 } },
+      color: { value: '#ffffff' },
+      shape: { type: 'circle' },
+      opacity: { value: 0.6, random: true },
+      size: { value: 3, random: true },
+      move: {
+        enable: true,
+        speed: 1.2,
+        direction: 'bottom',
+        random: true,
+        straight: false,
+        out_mode: 'out',
+      },
+      line_linked: { enable: false },
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: false },
+        onclick: { enable: false },
+        resize: true,
+      },
+    },
+    retina_detect: true,
+  });
+}
+
+function stopSnowParticles() {
+  const el = document.getElementById('particles-js');
+  if (!el) return;
+  el.innerHTML = '';
+}
+
+
+/* Random event */
+function applyRandomEvent() {
+  const chance = Math.floor(Math.random() * 4) + 1;
+
+  if (chance !== 1) {
+    eventText.textContent = 'No event. Keep running.';
+    return;
+  }
+
+  const eventType = Math.floor(Math.random() * 3) + 1;
+
+  if (eventType === 1) {
+    playerPos = Math.max(0, playerPos - 1);
+    eventText.textContent = 'Icy ground! Move back 1 step.';
+    return;
+  }
+
+  if (eventType === 2) {
+    playerPos = Math.min(totalSteps, playerPos + 1);
+    eventText.textContent = 'Dark shortcut! Move forward 1 step.';
+    return;
+  }
+
+  eventText.textContent = 'Spooky wind! Nothing happens.';
+}
+
 /* Update game stats */
 function updateGameStats() {
   const statsPlayerTurns = document.getElementById('statsPlayerTurns');
@@ -214,6 +286,7 @@ function startGame() {
   updateBoard(playerPos, rivalPos);
   rollBtn.disabled = false;
   setScreen('game');
+  startSnowParticles();      // Snow effect
 
   const spotifyPlayer = document.getElementById('spotifyPlayer');
   if (spotifyPlayer) {
@@ -224,6 +297,7 @@ function startGame() {
 /* Reset game */
 function resetGame() {
   stopAllSounds();
+  stopSnowParticles();      // Stop snow effect
 
   selectedReindeer = '';
   startGameBtn.disabled = true;
