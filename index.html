@@ -65,40 +65,51 @@
   <main class="container pb-4">
     <!-- Screen: Start -->
     <section id="screenStart" class="d-block">
-      <div class="hero-box mb-3 p-3">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Run, Rudolph, Run !</h1>
-            <p>
-              Everyone's dream comes true to lead Santa's sleigh.
-              The only problem? You must beat Rudolph through the scary,
-              dark forest to win the red nose.
-              Beware: Rudolph is fast and far more experienced than most.
-              Meet the challenge, beat Rudolph, and help Santa Claus.
-            </p>
-          </div>
-          <div class="hero-image">
-            <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img" />
-          </div>
-        </div>
-      </div>
 
-      <div class="intro-spotify-wrapper mb-4">
-        <div class="game-intro px-3">
-          <h2>Welcome to Run, Rudolph, Run!</h2>
-          <p>Choose a reindeer to compete against Rudolph.</p>
-          <p>Roll the dice. The higher the number, the faster you move through the dark forest and closer to the front
-            of the sleigh.</p>
-          <p>Reach the finish line first to win the red nose and lead Santa's sleigh.</p>
-        </div>
-
-        <div class="spotify-player">
-          <iframe id="spotifyPlayer" data-testid="embed-iframe" class="spotify-embed"
-            src="https://open.spotify.com/embed/track/2pnPe4pJtq7689i5ydzvJJ?utm_source=generator" width="100%"
-            height="152" frameborder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+         <div class="row mb-4">
+    <div class="hero-box p-4">
+  <div class="row align-items-center mb-4">
+    <!-- Welcome Text -->
+    <div class="col-md-4 text-center text-md-start">
+      <div class="game-intro">
+        <h2>Welcome to Run, Rudolph, Run!</h2>
+        <p>Choose a reindeer to compete against Rudolph.</p>
       </div>
+    </div>
+
+    <!-- Rudolph Image -->
+    <div class="col-md-4 text-center my-3 my-md-0">
+      <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img img-fluid" />
+    </div>
+
+    <!-- Spotify Player -->
+    <div class="col-md-4 text-center text-md-end">
+      <div class="spotify-player">
+        <iframe id="spotifyPlayer" class="spotify-embed"
+          src="https://open.spotify.com/embed/track/2pnPe4pJtq7689i5ydzvJJ?utm_source=generator"
+          width="100%" height="152" frameborder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rules Row -->
+  <div class="row">
+    <div class="col-12 text-center rules-list">
+      <ol>
+        <li>Roll the dice. The higher the number, the faster you move.</li>
+        <li>Reach the finish line first to win the red nose.</li>
+        <li>Help Santa Claus lead his sleigh!</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+
+    </div> <!-- End of row -->
+
+      
+
 
       <div class="reindeer-grid">
         <div class="reindeer-row">

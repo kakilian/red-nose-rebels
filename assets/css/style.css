@@ -208,41 +208,63 @@ button:hover {
   color: #764ba2;
 }
 
-/* Hero placeholder */
+/*===============================
+  Hero box (left) and Spotify box (right)
+===============================*/
+
 .hero-box {
-  min-height: 200px;
+  min-height: auto; /* allow height to adjust naturally */
   border: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem !important;
+  background: rgba(255, 255, 255, 0.55); /* semi-transparent white overlay */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); /* glassy effect to let background shine through */
+  padding: 1.5rem !important;
   overflow: hidden;
 }
 
-.hero-content {
+
+/* Hero row: welcome text + Rudolph + Spotify */
+.hero-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
+/* Welcome text column */
 .hero-text {
   flex: 1;
+  min-width: 180px;
+  text-align: right;
 }
 
+.hero-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #5a4bcf;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Rudolph column */
 .hero-image {
-  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
 .rudolph-img {
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #667eea;
+  border: 4px solid #5a4bcf;
   box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
   transition: all 0.3s ease;
-  overflow: hidden;
 }
 
 .rudolph-img:hover {
@@ -250,132 +272,76 @@ button:hover {
   box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
 }
 
-.hero-box h1 {
-  color: #667eea;
-  font-weight: 800;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.1);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-box p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #374151;
-  font-weight: 500;
-}
-
-/* Game intro and Spotify wrapper */
-.intro-spotify-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 2rem !important;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-}
-
-/* Game intro */
-.game-intro {
+/* Spotify player column */
+.hero-spotify {
   flex: 1;
+  min-width: 180px;
   text-align: left;
 }
 
-.game-intro h2 {
-  color: #667eea;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.1);
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.game-intro p {
-  color: #374151;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  font-weight: 500;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border-left: 4px solid #667eea;
-}
-
-/* Spotify player */
 .spotify-player {
-  flex-shrink: 0;
-  width: 350px;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(102, 126, 234, 0.2);
-  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  max-width: 220px;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .spotify-embed {
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  border: none;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  width: 100%;
+  height: 150px;
 }
 
-.spotify-embed:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+/* Rules underneath (centered, bullet points) */
+.rules-list {
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
-/* Responsive layout for intro + spotify */
+.rules-list ol {
+  list-style-type: disc;  /* change from numbers to bullets */
+  padding-left: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.rules-list ol li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive adjustments */
 @media (max-width: 992px) {
-  .intro-spotify-wrapper {
+  .hero-row {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .game-intro {
     text-align: center;
+    gap: 1.5rem;
   }
 
-  .game-intro p {
-    text-align: left;
-  }
-
-  .spotify-player {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .hero-box h1 {
-    font-size: 2rem;
-  }
-
-  .topbar-box .fw-semibold {
-    font-size: 1rem;
-  }
-
-  .hero-content {
-    flex-direction: column;
+  .hero-text, .hero-spotify {
     text-align: center;
   }
 
   .rudolph-img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .spotify-player {
+    max-width: 100%;
+  }
+
+  .rules-list ul {
+    text-align: center;
   }
 }
+
+
 
 /* Main board container */
 .board-box {
