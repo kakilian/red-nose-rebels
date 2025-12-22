@@ -164,14 +164,23 @@
             <strong id="selectedName" class="player-name">-</strong>
           </div>
           <!-- Dice and button row-->
-          <dev class="dice-controls mt-4">
+          <div class="dice-controls mt-4">
             <!--Dice count / face -->
-            <div class="dice-area">
-              <div class="dice-visual">
+            <div class="">
                 <div class="die-container">
-                  <div class="die" id="gameDie">
-                    <div class="die-face" id="gameDieFace"></div>
+                  <div class="die dice" id="gameDie">
+                    <div class="cube" id="cube">
+                      <div class="face face--1" data-face="1"></div>
+                      <div class="face face--2" data-face="2"></div>
+                      <div class="face face--3" data-face="3"></div>
+                      <div class="face face--4" data-face="4"></div>
+                      <div class="face face--5" data-face="5"></div>
+                      <div class="face face--6" data-face="6"></div>
+                    </div>
                   </div>
+            <!-- Spin dice button -->
+            <button id="rollBtn" class="btn btn-outline-dark game-btn" type="button"><img src="assets/images/extra/spin.png" alt="Spin Button" class="spin-img" /></button>
+
                 </div>
 
                 <div class="small mt-2 dice-info">
@@ -180,8 +189,6 @@
                 </div>
               </div>
             </div>
-            <!-- Spin dice button -->
-            <button id="rollBtn" class="btn btn-outline-dark game-btn" type="button">🎲Spin</button>
             <!-- Player-->
             <div class="race-stage">
               <div class=" race-lane mb-4">
