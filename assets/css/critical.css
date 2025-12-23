@@ -192,7 +192,7 @@ button:hover {
 .hero-box {
   min-height: auto; /* allow height to adjust naturally */
   border: none;
-  border-radius: 16px;
+  border-radius: 5px;
   overflow: hidden;
 }
 

@@ -381,18 +381,10 @@ END RUNNING REINDEER SPRITE OVERRIDES
 
 /* Reindeer grid layout */
 .reindeer-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0 1rem;
-}
-
-.reindeer-row {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  justify-items: center;
 }
 
 /* Reindeer button layout */
