@@ -49,7 +49,7 @@
 
         <!-- Right: Effects toggle -->
         <div class="desktop-right">
-          <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">✨ EFFECTS
+          <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">EFFECTS
             ON</button>
         </div>
       </div>
@@ -79,7 +79,8 @@
             <div class="col-md-4 text-center text-md-start">
               <div class="game-intro">
                 <h2>Welcome to Run, Rudolph, Run!</h2>
-                <br <p>Choose a reindeer to compete against Rudolph.</p>
+                <br>
+                <p>Choose a reindeer to compete against Rudolph.</p>
               </div>
             </div>
 
@@ -220,8 +221,10 @@
 
     <!-- Screen: Win -->
     <section id="screenWin" class="d-none">
-      <div class="board-box p-5 text-center mb-4">
-        <h2 class="h3 mb-4 result-title win-title">🎉 You Win the Red Nose! 🎉</h2>
+      <div 
+        class="p-5 text-center mb-4"
+        style="background-color: burlywood; border-radius: 20px; overflow: hidden;">
+        <h2 class="h3 mb-4 result-title win-title">You Win the Red Nose!</h2>
         <div class="winner-composition">
           <img id="winnerReindeerImg" src="" alt="Winner" class="winner-img" />
           <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
@@ -252,8 +255,16 @@
 
     <!-- Screen: Lose -->
     <section id="screenLose" class="d-none">
-      <div class="board-box p-5 text-center mb-4">
-        <h2 class="h3 mb-4 result-title lose-title">Rudolph Wins the Red Nose</h2>
+      <div 
+        class="p-5 text-center mb-4"
+        style="background-color: #5f7d8c; border-radius: 20px; overflow: hidden;"
+        >
+        <h2 
+          class="h3 mb-4 result-title lose-title"
+          style="color:#3a1f5c;"
+        >
+          Rudolph Keeps the Red Nose
+        </h2>
         <div class="winner-composition">
           <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="winner-img" />
           <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
