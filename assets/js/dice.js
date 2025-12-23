@@ -1,7 +1,8 @@
 /* Dice elements */
 const gameDie = document.getElementById('gameDie');
-const gameDieFace = document.getElementById('gameDieFace');
+const cube = document.getElementById('cube');
 const diceValueText = document.getElementById('diceValueText');
+const faces = cube ? [...cube.querySelectorAll('.face')] : [];
 
 /* Traditional die dot positions */
 const traditionalDots = {
@@ -38,13 +39,12 @@ const traditionalDots = {
   ],
 };
 
-/* Create traditional die face with dots*/
+/* Create traditional die face with dots */
 function createDieFace(faceElement, num) {
   if (!faceElement) return;
 
   faceElement.innerHTML = '';
   const dots = traditionalDots[num];
-
   if (!dots) return;
 
   dots.forEach((pos) => {
@@ -56,10 +56,20 @@ function createDieFace(faceElement, num) {
   });
 }
 
-/* Set dice face */
+/* Cube rotations to show each value */
+const faceRotations = {
+  1: 'rotateX(0deg) rotateY(0deg)',
+  2: 'rotateX(0deg) rotateY(-90deg)',
+  3: 'rotateX(0deg) rotateY(-180deg)',
+  4: 'rotateX(0deg) rotateY(90deg)',
+  5: 'rotateX(-90deg) rotateY(0deg)',
+  6: 'rotateX(90deg) rotateY(0deg)',
+};
+
+/* Set dice face (rotate cube + update text) */
 export function setDiceFace(value) {
-  createDieFace(gameDieFace, value);
-  diceValueText.textContent = String(value);
+  if (cube) cube.style.transform = faceRotations[value] || faceRotations[1];
+  if (diceValueText) diceValueText.textContent = String(value);
 }
 
 /* Roll dice 1 to 6 */
@@ -69,19 +79,21 @@ export function rollDice() {
 
 /* Add spin animation */
 export function startDiceSpin() {
-  if (gameDie) {
-    gameDie.classList.add('rolling');
-  }
+  if (gameDie) gameDie.classList.add('rolling');
 }
 
 /* Remove spin animation */
 export function stopDiceSpin() {
-  if (gameDie) {
-    gameDie.classList.remove('rolling');
-  }
+  if (gameDie) gameDie.classList.remove('rolling');
 }
 
-/* Initialize dice to 1 on load */
-if (gameDieFace) {
-  createDieFace(gameDieFace, 1);
+/* Initialize: build dots on ALL 6 faces once */
+if (faces.length === 6) {
+  faces.forEach((faceEl) => {
+    const n = Number(faceEl.dataset.face);
+    createDieFace(faceEl, n);
+  });
+  setDiceFace(1);
+} else {
+  console.error('Dice faces not properly initialized.');
 }

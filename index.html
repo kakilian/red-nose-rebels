@@ -22,7 +22,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/critical.css" />
+  <link 
+    rel="stylesheet" 
+    href="assets/css/style.css"
+    media="print"
+    onload="this.media='all'"
+    />
+  <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+
+    <!-- Image Preload -->
+    <link rel="preload" as="image" href="assets/images/reindeer/forest-background.jpg" />
 </head>
 
 <body class="bg-light">
@@ -38,7 +48,7 @@
         </div>
 
         <!-- Center: Title -->
-        <div class="desktop-center fw-semibold text-gradient">Rednose Rebels Presents!</div>
+        <div class="desktop-center fw-semibold">Rednose Rebels Presents!</div>
 
         <!-- Right: Effects toggle -->
         <div class="desktop-right">
@@ -50,7 +60,7 @@
       <!-- Mobile Layout (hidden on desktop) -->
       <div class="mobile-controls d-flex d-md-none align-items-center justify-content-between w-100">
         <!-- Center: Title -->
-        <div class="w-100 text-center fw-semibold">Run, Rudolph, Run !</div>
+        <div class="w-100 text-center fw-semibold">Rednose Rebels Presents!</div>
 
         <!-- Right: Hamburger button -->
         <button id="settingsBtn" type="button" class="btn btn-link p-0 text-dark text-decoration-none flex-shrink-0"
@@ -65,40 +75,35 @@
   <main class="container pb-4">
     <!-- Screen: Start -->
     <section id="screenStart" class="d-block">
-      <div class="hero-box mb-3 p-3">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Run, Rudolph, Run !</h1>
-            <p>
-              Everyone's dream comes true to lead Santa's sleigh.
-              The only problem? You must beat Rudolph through the scary,
-              dark forest to win the red nose.
-              Beware: Rudolph is fast and far more experienced than most.
-              Meet the challenge, beat Rudolph, and help Santa Claus.
-            </p>
-          </div>
-          <div class="hero-image">
-            <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img" />
-          </div>
-        </div>
-      </div>
 
-      <div class="intro-spotify-wrapper mb-4">
-        <div class="game-intro px-3">
-          <h2>Welcome to Run, Rudolph, Run!</h2>
-          <p>Choose a reindeer to compete against Rudolph.</p>
-          <p>Roll the dice. The higher the number, the faster you move through the dark forest and closer to the front
-            of the sleigh.</p>
-          <p>Reach the finish line first to win the red nose and lead Santa's sleigh.</p>
-        </div>
+      <div class="row mb-4">
+        <div class="hero-box p-4">
+          <div class="row align-items-center mb-4">
+            <!-- Welcome Text -->
+            <div class="col-md-4 text-center text-md-start">
+              <div class="game-intro">
+                <h2>Welcome to Run, Rudolph, Run!</h2>
+                <p>Choose a reindeer to compete against Rudolph.</p>
+              </div>
+            </div>
 
-        <div class="spotify-player">
-          <iframe id="spotifyPlayer" data-testid="embed-iframe" class="spotify-embed"
-            src="https://open.spotify.com/embed/track/2pnPe4pJtq7689i5ydzvJJ?utm_source=generator" width="100%"
-            height="152" frameborder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <!-- Rudolph Image -->
+            <div class="col-md-4 text-center my-3 my-md-0">
+              <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img img-fluid" />
+            </div>
+            </div>
+          <!-- Rules Row -->
+          <div class="row">
+            <div class="col-12 text-center rules-list">
+              <ol>
+                <li>Roll the dice. The higher the number, the faster you move.</li>
+                <li>Reach the finish line first to win the red nose.</li>
+                <li>Help Santa Claus lead his sleigh!</li>
+              </ol>
+            </div>
+          </div>
         </div>
-      </div>
+      </div> <!-- End of row -->
 
       <div class="reindeer-grid">
         <div class="reindeer-row">
@@ -150,63 +155,70 @@
 
     <!------------------------------------ Screen: Start of Game board ------------------------------------->
     <section id="screenGame" class="d-none">
-      <hr class="wire-divider my-4" />
-      <div id="particles-js"class="text-center">      <!-------- DO NOT CHANGE THIS LINE !!! -------------->
-        <h3 class="h6 mb-3 event-title">Forest Event</h3>
-        <p id="eventText" class="mb-0 event-text">Ready.</p>
-      </div>
+      <div id="particles-js" class="text-center"></div><!-------- DO NOT CHANGE THIS LINE !!! -------------->
       <!-- All within game board area -->
       <div class="board-box p-4 mb-4">
-        <div class="snow" aria-hidden="true"></div>
-        <div class="text-center mb-4">
-          <div class="player-info mb-3">
-            <span class="player-label">Playing as:</span>
-            <strong id="selectedName" class="player-name">-</strong>
+        <div class="game-hud mb-4">
+          <div class="hud-left">
+            <div class="player-info mb-3">
+              <span class="player-label">Playing as:</span>
+              <strong id="selectedName" class="player-name">-</strong>
+
+              <hr class="wire-divider my-4" />
+              <h3 class="h6 mb-3 event-title">Forest Event</h3>
+              <p id="eventText" class="mb-0 event-text">Ready.</p>
+            </div>
           </div>
-          <!-- Dice and button row-->
-          <dev class="dice-controls mt-4">
-            <!--Dice count / face -->
-            <div class="dice-area">
-              <div class="dice-visual">
-                <div class="die-container">
-                  <div class="die" id="gameDie">
-                    <div class="die-face" id="gameDieFace"></div>
+          <!--Dice count / face -->
+          <div class="hud-right">
+            <div class="dice-controls mt-4">
+              <div class="die-container">
+                <div class="die dice" id="gameDie">
+                  <div class="cube" id="cube">
+                    <div class="face face--1" data-face="1"></div>
+                    <div class="face face--2" data-face="2"></div>
+                    <div class="face face--3" data-face="3"></div>
+                    <div class="face face--4" data-face="4"></div>
+                    <div class="face face--5" data-face="5"></div>
+                    <div class="face face--6" data-face="6"></div>
                   </div>
                 </div>
+              </div>
+              <!-- Spin dice button -->
+              <button id="rollBtn" class="image-btn game-btn" type="button">
+                <img src="assets/images/extra/spin.png" alt="Spin the dice" class="spin-btn-img" />
+              </button>
+            </div>
 
-                <div class="small mt-2 dice-info">
-                  Roll:
-                  <strong id="diceValueText">-</strong>
-                </div>
-              </div>
+            <div class="small mt-2 dice-info">
+              Roll:
+              <strong id="diceValueText">-</strong>
             </div>
-            <!-- Spin dice button -->
-            <button id="rollBtn" class="btn btn-outline-dark game-btn" type="button">🎲Spin</button>
-            <!-- Player-->
-            <div class="race-stage">
-              <div class=" race-lane mb-4">
-                <div class="track">
-                  <span id="playerToken" class="token pos-0">
-                    <span class="token-label lane-name">YOU</span>
-                    <img id="playerTokenImg" src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Player"
-                      class="token-img" />
-                  </span>
-                  <span class="finish-label">FINISH</span>
-                </div>
-              </div>
+          </div>
+        </div>
+        <!-- Player-->
+        <div class="race-stage">
+          <div class=" race-lane mb-4">
+            <div class="track">
+              <span id="playerToken" class="token pos-0">
+                <span class="token-label lane-name">YOU</span>
+                <img id="playerTokenImg" src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Player"
+                  class="token-img" />
+              </span>
+
             </div>
-            <!-- Rudolph-->
-            <div class="race-stage">
-              <div class="race-lane mb-4 rival">
-                <div class="track">
-                  <span id="rivalToken" class="token pos-0">
-                    <span class="token-label lane-name">RUDOLPH</span>
-                    <img src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Rudolph" class="token-img" />
-                  </span>
-                  <span class="finish-label">FINISH</span>
-                </div>
-              </div>
+          </div>
+        </div>
+        <!-- Rudolph-->
+        <div class="race-stage">
+          <div class="race-lane mb-4 rival">
+            <div class="track">
+              <span id="rivalToken" class="token pos-0">
+                <span class="token-label lane-name">RUDOLPH</span>
+                <img src="./assets/images/reindeer/reindeer_run_sprite.png" alt="Rudolph" class="token-img" />
+              </span>
             </div>
+          </div>
         </div>
       </div>
     </section>
