@@ -785,4 +785,5 @@ END RUNNING REINDEER SPRITE OVERRIDES
 @media (max-width: 576px) {
   .dice-controls {
     flex-direction: column;
-
+  }
+}
