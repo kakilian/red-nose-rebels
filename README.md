@@ -169,7 +169,9 @@ For this project, we used the following tools and technologies:
 
 ## Bug Documentation
 
-### Placeholder for documented bugs.
+We encountered a major problem when we began working on the two racing reindeer. Whenever they occupied the same position on the track, the player (“you”) disappeared behind Rudolph, even though the player was visible at all other times. We initially tried to keep the reindeer in two closely aligned lanes while also improving the visibility of both the player and the label. However, as soon as one issue was addressed, new problems arose involving visibility, layout, and animation.
+
+After spending nearly an entire afternoon on this challenge, one team member proposed changing the game board by enlarging it and assigning the reindeer to clearly distinguishable lanes. This decision not only resolved the animation and spacing issues, but also made the game feel more festive—better aligning it with the hackathon’s theme—and more visually appealing. As a result, all components of the game are now clearly visible and immediately accessible.
 
 
 ## Deployment

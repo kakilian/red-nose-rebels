@@ -23,16 +23,13 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/critical.css" />
-  <link 
-    rel="stylesheet" 
-    href="assets/css/style.css"
-    media="print"
-    onload="this.media='all'"
-    />
-  <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </noscript>
 
-    <!-- Image Preload -->
-    <link rel="preload" as="image" href="assets/images/reindeer/forest-background.jpg" />
+  <!-- Image Preload -->
+  <link rel="preload" as="image" href="assets/images/reindeer/forest-background.jpg" />
 </head>
 
 <body class="bg-light">
@@ -52,7 +49,7 @@
 
         <!-- Right: Effects toggle -->
         <div class="desktop-right">
-          <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">✨ EFFECTS
+          <button id="effectsToggleBtn" type="button" class="btn btn-sm btn-success control-toggle">EFFECTS
             ON</button>
         </div>
       </div>
@@ -75,14 +72,14 @@
   <main class="container pb-4">
     <!-- Screen: Start -->
     <section id="screenStart" class="d-block">
-
       <div class="row mb-4">
         <div class="hero-box p-4">
-          <div class="row align-items-center mb-4">
+          <div class="row align-items-center">
             <!-- Welcome Text -->
             <div class="col-md-4 text-center text-md-start">
               <div class="game-intro">
                 <h2>Welcome to Run, Rudolph, Run!</h2>
+                <br>
                 <p>Choose a reindeer to compete against Rudolph.</p>
               </div>
             </div>
@@ -91,37 +88,36 @@
             <div class="col-md-4 text-center my-3 my-md-0">
               <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img img-fluid" />
             </div>
-            </div>
-          <!-- Rules Row -->
-          <div class="row">
-            <div class="col-12 text-center rules-list">
-              <ol>
+
+            <!-- Rules Row -->
+            <div class="col-md-4 text-center rules-list">
+              <h2 class="game-intro">Rules of the game!</h2>
+              <ol class="text-start d-inline-block">
                 <li>Roll the dice. The higher the number, the faster you move.</li>
                 <li>Reach the finish line first to win the red nose.</li>
                 <li>Help Santa Claus lead his sleigh!</li>
               </ol>
             </div>
-          </div>
-        </div>
-      </div> <!-- End of row -->
 
-      <div class="reindeer-grid">
-        <div class="reindeer-row">
+          </div>
+        </div> <!-- End of row -->
+
+        <div class="reindeer-grid">
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dasher">
             <img src="assets/images/reindeer/dasher.png" alt="Dasher" class="reindeer-img" />
             <span class="reindeer-name">Dasher</span>
           </button>
+
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dancer">
             <img src="assets/images/reindeer/dancer.png" alt="Dancer" class="reindeer-img" />
             <span class="reindeer-name">Dancer</span>
           </button>
+
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Prancer">
             <img src="assets/images/reindeer/prancer.png" alt="Prancer" class="reindeer-img" />
             <span class="reindeer-name">Prancer</span>
           </button>
-        </div>
 
-        <div class="reindeer-row">
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Vixen">
             <img src="assets/images/reindeer/vixen.png" alt="Vixen" class="reindeer-img" />
             <span class="reindeer-name">Vixen</span>
@@ -130,27 +126,26 @@
             <img src="assets/images/reindeer/comet.png" alt="Comet" class="reindeer-img" />
             <span class="reindeer-name">Comet</span>
           </button>
-        </div>
 
-        <div class="reindeer-row">
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Cupid">
             <img src="assets/images/reindeer/cupid.png" alt="Cupid" class="reindeer-img" />
             <span class="reindeer-name">Cupid</span>
           </button>
+
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Donner">
             <img src="assets/images/reindeer/donner.png" alt="Donner" class="reindeer-img" />
             <span class="reindeer-name">Donner</span>
           </button>
+
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Blitzen">
             <img src="assets/images/reindeer/blitzen.png" alt="Blitzen" class="reindeer-img" />
             <span class="reindeer-name">Blitzen</span>
           </button>
         </div>
-      </div>
 
-      <div class="text-center mt-5">
-        <button id="startGameBtn" class="btn btn-dark btn-lg game-btn" type="button" disabled>Start Game</button>
-      </div>
+        <div class="text-center mt-5">
+          <button id="startGameBtn" class="btn btn-dark btn-lg game-btn" type="button" disabled>Start Game</button>
+        </div>
     </section>
 
     <!------------------------------------ Screen: Start of Game board ------------------------------------->
@@ -163,7 +158,6 @@
             <div class="player-info mb-3">
               <span class="player-label">Playing as:</span>
               <strong id="selectedName" class="player-name">-</strong>
-
               <hr class="wire-divider my-4" />
               <h3 class="h6 mb-3 event-title">Forest Event</h3>
               <p id="eventText" class="mb-0 event-text">Ready.</p>
@@ -185,7 +179,7 @@
                 </div>
               </div>
               <!-- Spin dice button -->
-              <button id="rollBtn" class="image-btn game-btn" type="button">
+              <button id="rollBtn" class="image-btn" type="button">
                 <img src="assets/images/extra/spin.png" alt="Spin the dice" class="spin-btn-img" />
               </button>
             </div>
@@ -227,8 +221,10 @@
 
     <!-- Screen: Win -->
     <section id="screenWin" class="d-none">
-      <div class="board-box p-5 text-center mb-4">
-        <h2 class="h3 mb-4 result-title win-title">🎉 You Win the Red Nose! 🎉</h2>
+      <div 
+        class="p-5 text-center mb-4"
+        style="background-color: #fff2c2; border-radius: 20px; overflow: hidden;">
+        <h2 class="h3 mb-4 result-title win-title">You Win the Red Nose!</h2>
         <div class="winner-composition">
           <img id="winnerReindeerImg" src="" alt="Winner" class="winner-img" />
           <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
@@ -259,8 +255,16 @@
 
     <!-- Screen: Lose -->
     <section id="screenLose" class="d-none">
-      <div class="board-box p-5 text-center mb-4">
-        <h2 class="h3 mb-4 result-title lose-title">Rudolph Wins the Red Nose</h2>
+      <div 
+        class="p-5 text-center mb-4"
+        style="background-color: #5f7d8c; border-radius: 20px; overflow: hidden;"
+        >
+        <h2 
+          class="h3 mb-4 result-title lose-title"
+          style="color:#3a1f5c;"
+        >
+          Rudolph Keeps the Red Nose
+        </h2>
         <div class="winner-composition">
           <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="winner-img" />
           <i class="fas fa-arrow-right-long arrow-icon" aria-hidden="true"></i>
