@@ -176,10 +176,24 @@ After spending nearly an entire afternoon on this challenge, one team member pro
 
 ## Testing
 
-We tested the project, but the images just wouldn't load on the final readme. However, for the JS files, they are in the documentation folder.
+audio.js: JSHint showed a warning for audio.js, but since it functions, we decided to leave it as it is:
 
-![audio](documentation/audiotesting.jpg)
-Add image test
+![audio-js](documentation/js-audio-testing.JPG)
+
+
+dice.js: there are no warnings for dice.js:
+
+![dice-js](documentation/js-dice-testing.JPG)
+
+
+script.js: there were two warnings for this file, but the code functions, which is why we left intact:
+
+![script-js](documentation/js-script-testing.JPG)
+
+
+ui-js: there are no warnings for ui.js:
+
+![ui-js](documentation/js-ui-testing.JPG)
 
 ## Deployment
 
