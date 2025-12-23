@@ -174,6 +174,27 @@ We encountered a major problem when we began working on the two racing reindeer.
 After spending nearly an entire afternoon on this challenge, one team member proposed changing the game board by enlarging it and assigning the reindeer to clearly distinguishable lanes. This decision not only resolved the animation and spacing issues, but also made the game feel more festive—better aligning it with the hackathon’s theme—and more visually appealing. As a result, all components of the game are now clearly visible and immediately accessible.
 
 
+## Testing
+
+audio.js: JSHint showed a warning for audio.js, but since it functions, we decided to leave it as it is:
+
+![audio-js](documentation/js-audio-testing.JPG)
+
+
+dice.js: there are no warnings for dice.js:
+
+![dice-js](documentation/js-dice-testing.JPG)
+
+
+script.js: there were two warnings for this file, but the code functions, which is why we left intact:
+
+![script-js](documentation/js-script-testing.JPG)
+
+
+ui-js: there are no warnings for ui.js:
+
+![ui-js](documentation/js-ui-testing.JPG)
+
 ## Deployment
 
 ### GitHub Pages
@@ -233,5 +254,4 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 - [Katarina Kilian](https://github.com/kakilian) 
 - [Monica Thomas](https://github.com/monicathomas8)
 - [Dario](https://github.com/Drake-Designer)
-- [Dr Sascha Klement](https://github.com/Sascha-netizen)
-
+- [Sascha Klement](https://github.com/Sascha-netizen)
