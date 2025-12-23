@@ -4,12 +4,22 @@ const SETTINGS_KEY = 'rnr_settings';
 /* Sound state */
 let soundEnabled = true;
 
+/* Sound Master */
+const MASTER_VOLUME = 0.2;
+
 /* Audio files */
 const diceSound = new Audio('assets/audio/dice-roll.mp3');
 const winSound = new Audio('assets/audio/win.mp3');
 const loseSound = new Audio('assets/audio/game-over.mp3');
 const santaSound = new Audio('assets/audio/santa-ho-ho.mp3');
 const bellSound = new Audio('assets/audio/reindeer-bell.mp3');
+
+/* Volume levels (0.0 – 1.0) */
+diceSound.volume = 0.4;
+winSound.volume = 0.3 * MASTER_VOLUME;
+loseSound.volume = 0.45 * MASTER_VOLUME;
+santaSound.volume = 0.35 * MASTER_VOLUME;
+bellSound.volume = 0.25;
 
 /* Audio unlocked flag */
 let audioUnlocked = false;
