@@ -78,13 +78,10 @@ button:hover {
 }
 
 /* Top bar box */
-/* Top bar box */
 .topbar-box {
   border: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  background: none;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
   padding: 0.75rem 1.5rem !important;
   overflow: hidden;
 }
@@ -92,17 +89,10 @@ button:hover {
 /* Title styling */
 .topbar-box .fw-semibold {
   font-size: 1.25rem;
-  color: #667eea;
-  font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  color: whitesmoke;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.699);
   letter-spacing: 0.5px;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Desktop controls visibility and layout */
@@ -356,11 +346,12 @@ button:hover {
 
 /* Player info in game screen */
 .player-info {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  background: rgba(245, 245, 245, 0.7);
   padding: 0.75rem 1.5rem;
-  border-radius: 12px;
+  border-radius: 10px;
   display: inline-block;
   overflow: hidden;
+  width: 420px;
 }
 
 .player-label {
@@ -389,15 +380,15 @@ button:hover {
 
 /* Event area styling */
 .event-title {
-  color: #667eea;
+  color: red;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .event-text {
-  color: #667eea;
-  font-weight: 600;
+  color: red;
+  font-weight: 700;
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
@@ -408,7 +399,7 @@ button:hover {
 
 /* Dice info styling */
 .dice-info {
-  color: #667eea;
+  color: red;
   font-weight: 700;
   font-size: 1rem;
 }
@@ -541,14 +532,14 @@ button:hover {
 /* Finish label */
 .finish-label {
   position: absolute;
-  right: 8px;
+  right: 7px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 11px;
   font-weight: 700;
-  color: #667eea;
-  background: #fff;
-  padding: 2px 6px;
+  color: red;
+  
+  padding: 2px 1px !important;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -847,7 +838,7 @@ END RUNNING REINDEER SPRITE OVERRIDES
   /* bottom race stage */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 @keyframes forest-run {
@@ -859,28 +850,63 @@ END RUNNING REINDEER SPRITE OVERRIDES
   }
 }
 
+.game-hud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.hud-left {
+  flex: 0 0 auto;
+}
+
+.hud-right {
+  flex: 0 0 auto;
+}
+
+
 .race-stage {
+  margin-top: auto;
   position: relative;
   left: 0;
   right: 0;
-  bottom: 3px;
-  padding: 0 16px;
+  bottom: 1px;
+  padding: 2 16px;
 }
 
 .race-lane {
-  margin-bottom: 2px !important;
-  padding: 0;
+  margin-bottom: 0 !important;
+  padding: 1;
   background: transparent;
   box-shadow: none;
 }
 
 .lane-name {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #667eea;
-  padding: 3px 8px;
+  color: red;
+  padding: 10px;
   border-radius: 999px;
+}
+
+.image-btn {
+  background: none;
+  border:none;
+  padding:0;
+  background: rgba(245, 245, 245, 0.7);
+}
+
+.spin-btn-img {
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+
+}
+
+.spin-btn-img:hover {
+  transform: scale(1.05);
 }
 
 /* Winner Composition Layout */
@@ -1026,7 +1052,7 @@ END RUNNING REINDEER SPRITE OVERRIDES
 
 .stat-value {
   font-size: 1.5rem;
-  color: #667eea;
+  color: red;
   font-weight: 700;
 }
 
@@ -1070,5 +1096,17 @@ END RUNNING REINDEER SPRITE OVERRIDES
   color: #ef4444;
   font-weight: 800;
   text-shadow: 2px 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.dice-controls {
+  display: flex;
+  align-items: center;
+  gap: 3rem !important;
+}
+
+.die-container {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
 }
 
