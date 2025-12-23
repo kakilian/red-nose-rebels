@@ -735,9 +735,6 @@ END RUNNING REINDEER SPRITE OVERRIDES
   gap: 2rem;
   flex-wrap: wrap;
   padding: 1rem;
-  background: #667eea;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: 0 auto;
   overflow: hidden;
@@ -751,16 +748,16 @@ END RUNNING REINDEER SPRITE OVERRIDES
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: #6c757d;
+  font-size: 1.1rem;
+  color: #555450;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
+  letter-spacing: 1px;
+  font-weight: 800;
 }
 
 .stat-value {
   font-size: 1.5rem;
-  color: red;
+  color: whitesmoke;
   font-weight: 700;
 }
 
