@@ -397,7 +397,10 @@ END RUNNING REINDEER SPRITE OVERRIDES
   gap: 0.75rem;
   padding: 1.5rem 1.25rem;
   min-width: 140px;
-  background: rgba(255, 255, 255, 0.98);
+  background: linear-gradient(180deg,
+  #fff2c2 0%,
+  #f0d07a 100%
+  );
   border: 3px solid #667eea;
   border-radius: 16px;
   transition: all 0.3s ease;
