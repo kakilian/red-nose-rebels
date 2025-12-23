@@ -26,15 +26,42 @@
 /* Player info in game screen */
 .player-info {
   background: linear-gradient(135deg, #c62828d7, #b71c1ce0);
-  padding: 1rem 1.5rem;
-  width: 350px;
-
-  border-radius: 16px;
+  padding: 2rem 2rem 2rem;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  box-sizing: border-box;
 }
 
+.player-info::before,
+.player-info::after {
+  content: "";
+  position: absolute;
+  top: -22px;
+  width: 30px;
+  height: 30px;
+  background: #f6d365;
+  border-radius: 50% 50% 50% 0;
+}
+
+.player-info::before {
+  left: 50%;
+  transform: translateX(-100%) rotate(-45deg);
+}
+
+.player-info::after {
+  left: 50%;
+  transform: rotate(45deg);
+}
 
 .player-label {
   color: whitesmoke;
@@ -42,13 +69,15 @@
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-right: 0.5rem;
+  display: block;
+  margin: 0 0 0.25rem 0;
 }
 
 .player-name {
   color: whitesmoke;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
+  display: block;
 }
 
 /* Track labels */
@@ -63,18 +92,17 @@
 /* Event area styling */
 .event-title {
   color: whitesmoke;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .event-text {
   color: whitesmoke;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  display: inline-block;
+  text-align: center;
+  border-radius: 10px;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -87,7 +115,7 @@
 
 /* Result screens styling */
 .result-title {
-  color: #667eea;
+  color: #667eeaa6;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -101,7 +129,7 @@
 
 /* Divider line */
 .wire-divider {
-  border-top: 2px solid #667eea;
+  border-top: 2px solid whitesmoke;
   opacity: 0.3;
 }
 
@@ -530,7 +558,7 @@ END RUNNING REINDEER SPRITE OVERRIDES
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 7rem;
 }
 
 .hud-left {
@@ -567,15 +595,20 @@ END RUNNING REINDEER SPRITE OVERRIDES
   border-radius: 999px;
 }
 
-.image-btn {
+.image-btn,
+.image-btn:hover,
+.image-btn:focus,
+.image-btn:active {
   background: none;
-  border:none;
-  padding:0;
-  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none !important;
+  outline: none;
 }
-
+ 
 .spin-btn-img {
-  width: 90px;
+  width: 200px;
   height: auto;
   cursor: pointer;
 }

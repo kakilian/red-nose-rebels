@@ -23,16 +23,13 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/critical.css" />
-  <link 
-    rel="stylesheet" 
-    href="assets/css/style.css"
-    media="print"
-    onload="this.media='all'"
-    />
-  <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </noscript>
 
-    <!-- Image Preload -->
-    <link rel="preload" as="image" href="assets/images/reindeer/forest-background.jpg" />
+  <!-- Image Preload -->
+  <link rel="preload" as="image" href="assets/images/reindeer/forest-background.jpg" />
 </head>
 
 <body class="bg-light">
@@ -91,8 +88,8 @@
             <div class="col-md-4 text-center my-3 my-md-0">
               <img src="assets/images/reindeer/rudolph.jpg" alt="Rudolph" class="rudolph-img img-fluid" />
             </div>
-            
-          <!-- Rules Row -->
+
+            <!-- Rules Row -->
             <div class="col-md-4 text-center rules-list">
               <h2 class="game-intro">Rules of the game!</h2>
               <ol class="text-start d-inline-block">
@@ -101,11 +98,11 @@
                 <li>Help Santa Claus lead his sleigh!</li>
               </ol>
             </div>
-          
-        </div>
-      </div> <!-- End of row -->
 
-      <div class="reindeer-grid">
+          </div>
+        </div> <!-- End of row -->
+
+        <div class="reindeer-grid">
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Dasher">
             <img src="assets/images/reindeer/dasher.png" alt="Dasher" class="reindeer-img" />
             <span class="reindeer-name">Dasher</span>
@@ -120,7 +117,7 @@
             <img src="assets/images/reindeer/prancer.png" alt="Prancer" class="reindeer-img" />
             <span class="reindeer-name">Prancer</span>
           </button>
-        
+
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Vixen">
             <img src="assets/images/reindeer/vixen.png" alt="Vixen" class="reindeer-img" />
             <span class="reindeer-name">Vixen</span>
@@ -129,7 +126,7 @@
             <img src="assets/images/reindeer/comet.png" alt="Comet" class="reindeer-img" />
             <span class="reindeer-name">Comet</span>
           </button>
-        
+
           <button class="btn btn-outline-dark btn-sm reindeer-btn" type="button" data-reindeer="Cupid">
             <img src="assets/images/reindeer/cupid.png" alt="Cupid" class="reindeer-img" />
             <span class="reindeer-name">Cupid</span>
@@ -144,11 +141,11 @@
             <img src="assets/images/reindeer/blitzen.png" alt="Blitzen" class="reindeer-img" />
             <span class="reindeer-name">Blitzen</span>
           </button>
-      </div>
+        </div>
 
-      <div class="text-center mt-5">
-        <button id="startGameBtn" class="btn btn-dark btn-lg game-btn" type="button" disabled>Start Game</button>
-      </div>
+        <div class="text-center mt-5">
+          <button id="startGameBtn" class="btn btn-dark btn-lg game-btn" type="button" disabled>Start Game</button>
+        </div>
     </section>
 
     <!------------------------------------ Screen: Start of Game board ------------------------------------->
@@ -161,7 +158,6 @@
             <div class="player-info mb-3">
               <span class="player-label">Playing as:</span>
               <strong id="selectedName" class="player-name">-</strong>
-
               <hr class="wire-divider my-4" />
               <h3 class="h6 mb-3 event-title">Forest Event</h3>
               <p id="eventText" class="mb-0 event-text">Ready.</p>
@@ -183,7 +179,7 @@
                 </div>
               </div>
               <!-- Spin dice button -->
-              <button id="rollBtn" class=" image-btn" type="button">
+              <button id="rollBtn" class="image-btn" type="button">
                 <img src="assets/images/extra/spin.png" alt="Spin the dice" class="spin-btn-img" />
               </button>
             </div>
